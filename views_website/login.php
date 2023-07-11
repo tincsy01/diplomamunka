@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -7,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Registration</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -32,7 +31,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
-    <script src="../assets/js/scripts/registration.js"></script>
+    <script src="../assets/js/scripts/login.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -44,28 +43,17 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
+
                 <div class="card">
-                    <span class="title">Registration</span>
-                    <form class="form" id="registration-form">
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="name" name="name">
-                            <label for="name">Name</label>
-                        </div>
+                    <span class="title">Login</span>
+                    <form class="form" id="login-form">
                         <div class="group">
                             <input placeholder="‎" type="text" id="username" name="username">
                             <label for="username">Username</label>
                         </div>
                         <div class="group">
-                            <input placeholder="‎" type="email" id="email" name="email">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="group">
                             <input placeholder="‎" type="password" id="password" name="password">
                             <label for="password">Password</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="address" name="address">
-                            <label for="address">Address</label>
                         </div>
                         <button type="submit">Submit</button>
                     </form>
@@ -74,8 +62,6 @@
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
 
             </div>
-
-
         </div>
         <?php
         require_once '../assets/php/includes/footer.php';

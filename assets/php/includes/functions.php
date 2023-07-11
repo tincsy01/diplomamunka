@@ -92,7 +92,6 @@ function sendData($email, $code)
         return false;
     }
 }
-
 /**
  * @param $username
  * @param $email
