@@ -1,4 +1,6 @@
 <?php
+
+//session_start();
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 require_once '../php/includes/functions.php';
@@ -7,7 +9,7 @@ $pdo = connectDatabase($dsn, $pdoOptions);
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT user_id, password, permission FROM users WHERE username = :username AND permission = 2 AND active = 1";
+$sql = "SELECT user_id, password, permission FROM users WHERE username = :username AND active = 1";
 $query = $pdo->prepare($sql);
 $query->bindParam(':username', $username, PDO::PARAM_STR);
 $query->execute();
@@ -18,33 +20,39 @@ if ($query->rowCount() > 0) {
         $data['user_id'] = (int)$row['user_id'];
         $registeredPassword = $row['password'];
         $data['permission'] = $row['permission'];
+        if ($data['permission'] == 2) {
+            $_SESSION['permission'] = $row['permission'];
+            $_SESSION['user_id'] = (int)$row['user_id'];
+            // További műveletek...
+            redirection('../../views_website/index.php');
+            $response = array('success' => true, 'message' => 'Logged in');
+            echo json_encode($response);
+            exit;
+        }
     }
+}
+$sql = "SELECT org_id, password, permission FROM organizations WHERE username = :username AND active = 1";
+$query = $pdo->prepare($sql);
+$query->bindParam(':username', $username, PDO::PARAM_STR);
+$query->execute();
 
-    if (!password_verify($password, $registeredPassword)) {
-        $data = [];
-    }
-    redirection('../../views_website/index.php');
-    $response = array('success' => true, 'message' => 'Logged in');
-    echo json_encode($response);
-} elseif ($query->rowCount() < 0) {
-    $sql = "SELECT org_id, password, permission FROM organizations WHERE username = :username AND permission = 3 AND active = 1";
-    $query = $pdo->prepare($sql);
-    $query->bindParam(':username', $username, PDO::PARAM_STR);
-    $query->execute();
+if ($query->rowCount() > 0) {
     while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
         $data['user_id'] = (int)$row['org_id'];
         $registeredPassword = $row['password'];
         $data['permission'] = $row['permission'];
+        if ($data['permission'] == 3) {
+            $_SESSION['permission'] = $row['permission'];
+            $_SESSION['user_id'] = (int)$row['org_id'];
+            // További műveletek...
+            redirection('../../views_website/index.php');
+            $response = array('success' => true, 'message' => 'Logged in');
+            echo json_encode($response);
+            exit;
+        }
     }
-
-    if (!password_verify($password, $registeredPassword)) {
-        $data = [];
-    }
-    redirection('../../views_website/index.php');
-    $response = array('success' => true, 'message' => 'Logged in');
-    echo json_encode($response);
-} else {
-    $response = array('success' => true, 'message' => 'Your username or password is incorrect.');
-    echo json_encode($response);
 }
 
+// Ha nem található a felhasználó
+$response = array('success' => false, 'message' => 'User not found.');
+echo json_encode($response);

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 if (response.success) {
-                    window.location.href = "../../views_website/index.php";
+                    window.location.href = "index.php";
                 } else {
                     alert(response.message);
                 }

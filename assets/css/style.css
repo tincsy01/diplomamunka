@@ -1076,7 +1076,8 @@ figure {
 }
 
 .form .group input,
-.form .group textarea {
+.form .group textarea,
+.form .group select{
   padding: 10px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -1123,4 +1124,14 @@ figure {
 
 .form button:hover {
   background-color: #27408b;
+}
+
+.attractionsData{
+  background-color: #F1F6F9;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+}
+.attractionLink{
+  color: black;
 }
