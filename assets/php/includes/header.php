@@ -34,7 +34,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../../js/modernizr-2.6.2.min.js"></script>
     <script src="../../js/respond.min.js"></script>
-    <script src="../../js/scripts/registration.js"></script>
+<!--    <script src="../../js/scripts/registration.js"></script>-->
 </head>
 <body>
 <header id="fh5co-header-section">
@@ -77,8 +77,8 @@ session_start();
                                 echo' <li>
                                         <a href="#" class="fh5co-sub-ddown">Attractions</a>
                                         <ul class="fh5co-sub-menu">
-                                            <li><a href="#" target="_blank">Make an attraction</a></li>
-                                            <li><a href="#" target="_blank">My attractions</a></li>
+                                            <li><a href="./make_attraction.php" target="_blank">Make an attraction</a></li>
+                                            <li><a href="./attractions.php" target="_blank">My attractions</a></li>
                                         </ul>
                                     </li>';
                                 echo'<li>

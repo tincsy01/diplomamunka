@@ -3,7 +3,6 @@ require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-//$sql = "SELECT c.city_id, c.city_name, c.image FROM cities c INNER JOIN organizations o ON c.organization_name = o.org_name WHERE o.status = 1 ";
 $sql = "SELECT city_id, city_name, image FROM cities  ";
 $query = $pdo->prepare($sql);
 $query->execute();

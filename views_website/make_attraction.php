@@ -27,16 +27,11 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/favourite.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
-    <script src="../assets/js/scripts/get_attraction_data.js"></script>
-<!--    <script src="../assets/js/scripts/get_favourite.js"></script>-->
+    <script src="../assets/js/scripts/make_attraction.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -47,34 +42,47 @@
             ?>
         </div>
         <div class="fh5co-hero">
-            <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
-                <div class="desc animate-box">
-                    <h2>Travel Around The World.</h2>
-                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>
-                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>
+            <div class="fh5co-overlay">
+
+                <div class="card">
+                    <span class="title">Make your city attraction</span>
+                    <form class="form" id="login-form" enctype="multipart/form-data">
+                        <div class="group">
+                            <input placeholder="‎" type="text" id="attraction" name="attraction">
+                            <label for="attraction">Attraction name</label>
+                        </div>
+                        <div class="group">
+                            <select name="category" id="category" >
+                                <option value="" disabled selected hidden >-- Select a category --</option>
+                            </select>
+                            <label for="category">Category</label>
+                        </div>
+                        <div class="group">
+                            <input placeholder="‎" type="text" id="longitude" name="longitude">
+                            <label for="longitude">Longitude</label>
+                        </div>
+                        <div class="group">
+                            <input placeholder="‎" type="text" id="lattitude" name="lattitude">
+                            <label for="lattitude">Latitude</label>
+                        </div>
+                        <div class="group">
+                            <input placeholder="‎" type="text" id="address" name="address">
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="group">
+                            <textarea name="description" id="description" cols="25" rows="3" placeholder="‎"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                        <div class="group">
+                            <input placeholder="‎" type="file" id="photo" name="photo">
+                            <label for="photo">Photo</label>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="fh5co-listing">
-            <div class="container">
-                <div class="row">
-                    <div class="attractionData">
-                        <div class="favoriteControl">
-                            <label for="favoriteCheckbox">Kedvenc:</label>
-                            <input type="checkbox" id="favoriteCheckbox">
-                        </div>
-<!--                        <input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">-->
-<!--                        <label for="favorite" class="container">-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>-->
-<!--                            <div class="action">-->
-<!--                                <span class="option-1">Add to Favorites</span>-->
-<!--                                <span class="option-2">Added to Favorites</span>-->
-<!--                            </div>-->
-<!--                        </label>-->
-                        <div id="map" style="height: 300px"></div>
-                    </div>
-                </div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+
             </div>
         </div>
         <?php
@@ -82,7 +90,6 @@
         ?>
     </div>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDdM9r54y8zfnzG36y0JMpayRCyQj1TU2o&callback=initMap"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.easing.1.3.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
