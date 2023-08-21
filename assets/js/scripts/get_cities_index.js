@@ -9,7 +9,8 @@ $(document).ready(function() {
                 var city = data[i];
                 var divHtml = '<div class="col-md-4 col-sm-4 fh5co-item-wrap">';
                 divHtml += '<a class="fh5co-listing-item" href="./city_data.php?city_id=' + city.city_id + '">';
-                divHtml += '<img src="./images/cities' + city.image + '" alt="Image" class="img-responsive">';
+                // divHtml += '<img src="./images/cities' + city.image + '" alt="Image" class="img-responsive">';
+                divHtml += '<img src="./' + city.image + '" alt="Image" class="img-responsive">';
                 divHtml += '<div class="fh5co-listing-copy">';
                 // console.log(city.image);
                 divHtml += '<h2 class="cityName">' + city.city_name + '</h2>';

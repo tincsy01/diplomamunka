@@ -4,7 +4,7 @@ require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
-var_dump($_POST);die();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $orgId = $_SESSION['user_id'];
     $attractionName = $_POST['attraction'];
