@@ -89,8 +89,8 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
                     </div>
-                </div>
                     <div id="newCityModal" class="modal" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -128,6 +128,59 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" id="updateCityModal" tabindex="-1" role="dialog" aria-labelledby="updateCityModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updateCityModalLabel">Update City</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="updateCityForm">
+                                        <input type="hidden" id="updateCityId" name="cityId">
+                                        <div class="form-group">
+                                            <label for="updateCityName">City Name</label>
+                                            <input type="text" class="form-control" id="updateCityName" name="cityName" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="longitude">Longitude</label>
+                                            <input type="text" class="form-control" id="updateLongitude" name="longitude" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lattitude">Lattitude</label>
+                                            <input type="text" class="form-control" id="updateLattitude" name="lattitude" required>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" id="updateCityBtn" class="btn btn-primary">Update City</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="deleteCityModal" tabindex="-1" role="dialog" aria-labelledby="deleteCityModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteCityModalLabel">Delete City</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete the city <span id="cityNameToDelete"></span>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
             </div>
             <!-- /.container-fluid -->
