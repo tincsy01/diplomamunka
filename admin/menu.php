@@ -37,8 +37,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item" href="cities.php">Cities</a>
-                <a class="collapse-item" href="cards.html">Users</a>
-                <a class="collapse-item" href="cards.html">Workers</a>
+                <a class="collapse-item" href="users.php">Users</a>
+                <a class="collapse-item" href="workers.php">Workers</a>
                 <a class="collapse-item" href="cards.html">Organizations</a>
             </div>
         </div>
