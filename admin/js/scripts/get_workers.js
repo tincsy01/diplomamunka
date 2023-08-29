@@ -30,24 +30,25 @@ $(document).ready(function() {
     // Add Worker gombra kattintás eseménykezelő
     $("#addWorkerBtn").click(function () {
         // Új város adatainak begyűjtése
-        var name = $("#name").val();
-        var username = $("#username").val();
+        // var name = $("#name").val();
+        // var username = $("#username").val();
         var email = $("#email").val();
-        var password = $("#password").val();
-        var address = $("#address").val();
-        var phone = $("#phone").val();
+        // var password = $("#password").val();
+        // var address = $("#address").val();
+        // var phone = $("#phone").val();
 
         // AJAX hívás az adatok továbbításához
         var formData = new FormData();
-        formData.append("name", name);
-        formData.append("username", username);
+        // formData.append("name", name);
+        // formData.append("username", username);
         formData.append("email", email);
-        formData.append("password", password);
-        formData.append("address", address);
-        formData.append("phone", phone);
+        // formData.append("password", password);
+        // formData.append("address", address);
+        // formData.append("phone", phone);
 
         $.ajax({
-            url: "/admin/ajax/insert_new_worker.php",
+            // url: "/admin/ajax/insert_new_worker.php",
+            url: "/admin/ajax/send_mail_worker.php",
             method: "POST",
             data: formData,
             contentType: false,
