@@ -88,6 +88,19 @@ session_start();
                                         <a href="./logout.php">Log out</a>
                                     </li>';
                                 break;
+                            case 4 :
+                                echo'<li class="active">
+                                        <a href="./views_mobile/worker_index.php">Home</a>
+                                    </li>';
+                                echo'<li>
+                                       <a href="#">Coupons</a>
+                                    </li>';
+                                echo'<li>
+                                       <a href="#">Statistics</a>
+                                    </li>';
+                                echo'<li>
+                                        <a href="./views_website/logout.php">Log out</a>
+                                    </li>';
                         }
                     }
                     else{

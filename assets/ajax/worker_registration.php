@@ -5,7 +5,7 @@ require_once '../../config/db_config.php';
 require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-$permission = 3;
+$permission = 4;
 $name = $_POST['name'];
 $username = $_POST['username'];
 $email = $_POST['email'];
