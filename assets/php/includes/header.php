@@ -93,7 +93,7 @@ session_start();
                                         <a href="./views_mobile/worker_index.php">Home</a>
                                     </li>';
                                 echo'<li>
-                                       <a href="#">Coupons</a>
+                                       <a href="./views_mobile/coupons.php">Coupons</a>
                                     </li>';
                                 echo'<li>
                                        <a href="#">Statistics</a>

@@ -121,7 +121,7 @@
                                             <select name="permission" id="updatePermission">
                                                 <option value="1">Admin</option>
                                                 <option value="2">User</option>
-                                                <option value="3">Worker</option>
+                                                <option value="4">Worker</option>
                                             </select>
                                         </div>
                                         <div class="form-group">

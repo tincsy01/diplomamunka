@@ -35,7 +35,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
+                <h6 class="collapse-header">Managing:</h6>
                 <a class="collapse-item" href="cities.php">Cities</a>
                 <a class="collapse-item" href="users.php">Users</a>
                 <a class="collapse-item" href="workers.php">Workers</a>
@@ -54,11 +54,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">List</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
+                <h6 class="collapse-header">Statistics from:</h6>
+                <a class="collapse-item" href="statistic_tours.php">Users</a>
+                <a class="collapse-item" href="utilities-border.html">Cities</a>
+<!--                <a class="collapse-item" href="utilities-animation.html">Animations</a>-->
+<!--                <a class="collapse-item" href="utilities-other.html">Other</a>-->
             </div>
         </div>
     </li>
