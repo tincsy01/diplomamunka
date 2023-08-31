@@ -18,7 +18,9 @@ try {
 $user_id = $_POST['userId'];
 $discount = $_POST['discount'];
 $phone = $_POST['phone'];
-$coupon_expire = strtotime('+1 month');
+$coupon_expire = new DateTime();
+$coupon_expire->add(new DateInterval('P1M'));
+$coupon_expire_formatted = $coupon_expire->format('Y-m-d H:i:s');
 $code = createCode(6);
 $active = 1;
 
@@ -29,7 +31,7 @@ $query = $pdo->prepare($sql);
 $query->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $query->bindParam(':discount', $discount, PDO::PARAM_STR);
 $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-$query->bindParam(':coupon_expire', $coupon_expire, PDO::PARAM_STR);
+$query->bindParam(':coupon_expire', $coupon_expire_formatted, PDO::PARAM_STR);
 $query->bindParam(':active', $active, PDO::PARAM_INT);
 $query->bindParam(':code', $code, PDO::PARAM_STR);
 $query->execute();
