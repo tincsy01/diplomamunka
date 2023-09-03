@@ -15,7 +15,7 @@ $(document).ready(function() {
                 var dataHtml = '<h2>' + response.name + '</h2>' +
                     '<p>Attraction ID: ' + response.attraction_id + '</p>' +
                     '<p>Popular: ' + response.popular + '</p>' +
-                    '<img src="' + response.image + '" alt="' + response.name + '">' +
+                    '<img src="/assets/images/attractions/' + response.image + '" alt="' + response.name + '">' +
                     '<p>Description: ' + response.description + '</p>' +
                     '<p>Address: ' + response.address + '</p>';
                 attractionDataDiv.html(dataHtml);

@@ -26,8 +26,8 @@ if ($query->rowCount() > 0) {
             $_SESSION['permission'] = $row['permission'];
             $_SESSION['user_id'] = (int)$row['user_id'];
             // További műveletek...
-            redirection('../../views_website/index.php');
-            $response = array('success' => true, 'message' => 'Logged in');
+//            redirection('./views_website/index.php');
+            $response = array('success' => true, 'message' => 'Logged in', 'url' => 'views_website/index.php');
             echo json_encode($response);
             exit;
         }
@@ -35,8 +35,9 @@ if ($query->rowCount() > 0) {
             $_SESSION['permission'] = $row['permission'];
             $_SESSION['user_id'] = (int)$row['user_id'];
             // További műveletek...
-            redirection('./views_mobile/worker_index.php');
-            $response = array('success' => true, 'message' => 'Logged in');
+//            redirection('./views_mobile/worker_index.php');
+            $response = array('success' => true, 'message' => 'Logged in', 'url' => 'views_mobile/worker_index.php');
+//            $response = array('success' => true, 'message' => 'Logged in');
             echo json_encode($response);
             exit;
         }
@@ -56,8 +57,9 @@ if ($query->rowCount() > 0) {
             $_SESSION['permission'] = $row['permission'];
             $_SESSION['user_id'] = (int)$row['org_id'];
             // További műveletek...
-            redirection('../../views_website/index.php');
-            $response = array('success' => true, 'message' => 'Logged in');
+//            redirection('../../views_website/index.php');
+//            redirection('./views_website/index.php');
+            $response = array('success' => true, 'message' => 'Logged in', 'url' => 'views_website/index.php');
             echo json_encode($response);
             exit;
         }
