@@ -8,6 +8,7 @@ session_start();
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 require_once '../../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once '../../../vendor/phpmailer/phpmailer/src/SMTP.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 /**
@@ -84,6 +85,90 @@ function sendData($email, $code)
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
+        echo 'Message has been sent';
+        return true;
+
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        return false;
+    }
+}
+/**
+ * Function tries to send email with activation code
+ * Regisztraciohoz
+ *
+ * @param $email
+ * @param $code
+ * @return bool
+ */
+function sendResetPassword($email, $code)
+{
+    $mail = new PHPMailer(true);
+    try {
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host       = 'em.stud.vts.su.ac.rs';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'em';
+        $mail->Password   = 'h3waxBgfAQHM6dk';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+
+        $mail->setFrom('kriszta@em.stud.vts.su.ac.rs', 'Mailer');
+        $mail->addAddress($_POST['email'], 'User');     //Add a recipient
+
+        $activationLink = SITE . "reset_password_confirm.php?code=$code";
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Request to work';
+
+        $mail->Body = "
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                    background-color: #f0f0f0;
+                                }
+                                .container {
+                                    max-width: 600px;
+                                    margin: 0 auto;
+                                    padding: 20px;
+                                    background-color: white;
+                                    border-radius: 10px;
+                                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                                }
+                                img {
+                                    max-width: 100%;
+                                    height: auto;
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                                .button {
+                                    display: inline-block;
+                                    padding: 10px 20px;
+                                    background-color: #007bff;
+                                    color: white;
+                                    text-decoration: none;
+                                    border-radius: 5px;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <div class='container'>
+                                <img src='../../../assets/logo-black.png' alt='Logo'>
+                                <h1>Welcome in Our Team</h1>
+                                <p>To Reset, <a class='button' href='$activationLink'>click here</a>.</p>
+                            </div>
+                        </body>
+                        </html>
+                        ";
+        $mail->AltBody = "To reset your password, visit the following link: $activationLink";
+        $mail->send();
+
         echo 'Message has been sent';
         return true;
 

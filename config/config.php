@@ -1,5 +1,6 @@
 <?php
 define("SITE", 'https://localhost/TenderTours/views_website/');
+//define("RESETLINK", 'https://localhost/TenderTours/views_website/');
 define("SECRET", 'gfhUi34xVbds23Qgk');
 date_default_timezone_set('Europe/Belgrade');
 
