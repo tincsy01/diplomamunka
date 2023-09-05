@@ -10,7 +10,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 //$sql = "SELECT user_id, password, permission FROM users WHERE username = :username AND active = 1 OR active = 4";
-$sql = "SELECT user_id, password, permission FROM users WHERE username = :username AND (active = 1 OR active = 4)";
+$sql = "SELECT user_id, password, permission, working_at FROM users WHERE username = :username AND (active = 1 OR active = 4)";
 
 $query = $pdo->prepare($sql);
 $query->bindParam(':username', $username, PDO::PARAM_STR);
@@ -34,6 +34,8 @@ if ($query->rowCount() > 0) {
         if ($data['permission'] == 4) {
             $_SESSION['permission'] = $row['permission'];
             $_SESSION['user_id'] = (int)$row['user_id'];
+            $_SESSION['working_at'] = (int)$row['working_at'];
+
             // További műveletek...
 //            redirection('./views_mobile/worker_index.php');
             $response = array('success' => true, 'message' => 'Logged in', 'url' => 'views_mobile/worker_index.php');

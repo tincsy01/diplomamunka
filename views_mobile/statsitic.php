@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,10 +28,11 @@
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
-    <script src="../assets/js/scripts/add_visitors.js"></script>
+    <script src="../assets/js/scripts/get_statistics.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -46,26 +46,14 @@
             <div class="fh5co-overlay">
 
                 <div class="card">
-                    <span class="title">Add visitors</span>
-                    <form class="form" id="login-form">
-                        <div class="group">
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-danger" id="minus-btn">-</button>
-                                </span>
-                                <input type="text" class="form-control" id="number-field" value="0">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-success" id="plus-btn">+</button>
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="group">
-                            <textarea placeholder="‎"  name="description" id="description" cols="10" rows="10"></textarea>
-                            <label for="description">Description</label>
-                        </div>
-                        <button type="submit" id="submit-btn">Submit</button>
-                    </form>
+                    <span class="title">Statistics</span>
+                    <!-- Select mező a kiválasztáshoz -->
+                    <select id="chartType" class="form-control">
+                        <option value="months">Months</option>
+                        <option value="days">Days</option>
+                    </select>
+                    <!-- A diagram tartalmi része -->
+                    <canvas id="myChart"></canvas>
                 </div>
             </div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background-index.jpg);">
@@ -88,3 +76,4 @@
 <script src="../assets/js/main.js"></script>
 </body>
 </html>
+
