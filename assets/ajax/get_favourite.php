@@ -17,13 +17,13 @@ if (isset($_SESSION['user_id'])) {
         $result->execute();
 
         if ($result->rowCount() > 0) {
-            echo json_encode(true); // Válasz: true
+            echo json_encode(true);
         } else {
-            echo json_encode(false); // Válasz: false
+            echo json_encode(false);
         }
     } else {
-        echo json_encode(false); // Ha hiányzik az attraction_id paraméter
+        echo json_encode(false);
     }
 } else {
-    echo json_encode(false); // Ha a felhasználó nincs bejelentkezve
+    echo json_encode(false);
 }

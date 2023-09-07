@@ -1266,3 +1266,96 @@ tbody {
 .card__button:hover {
   background-color: #272C30;
 }
+.tourData{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+/* Media Query a közepes kijelzőkre (pl. tabletek) */
+@media (max-width: 992px) {
+  .tourData {
+    width: 400px;
+  }
+}
+
+/* Media Query a kisebb kijelzőkre (pl. mobilok) */
+@media (max-width: 768px) {
+  .tourData {
+    width: 300px;
+    margin-top: 100px;
+  }
+}
+/*cardAttraction*/
+.cardAttraction {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+/* Media Query a közepes kijelzőkre (pl. tabletek) */
+@media (max-width: 992px) {
+  .cardAttraction {
+    width: 400px;
+  }
+}
+
+/* Media Query a kisebb kijelzőkre (pl. mobilok) */
+@media (max-width: 768px) {
+  .cardAttraction {
+    width: 300px;
+    margin-top: 100px;
+  }
+}
+
+.black-link {
+  color: black;
+  text-decoration: none;
+}
+
+
+.black-link:hover {
+  color: #7a43b6;
+}
+/*rating*/
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}

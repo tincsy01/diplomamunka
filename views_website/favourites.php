@@ -35,8 +35,7 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
-    <script src="../assets/js/scripts/get_attraction_data.js"></script>
-    <script src="../assets/js/scripts/get_comments.js"></script>
+    <script src="../assets/js/scripts/get_favourites.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -48,26 +47,12 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
-                <div class="cardAttraction">
-                    <div class="attractionData">
-                        <button id="favorite-button" class="btn">Add to Favorites</button>');
-                        <div id="map" style="height: 300px"></div>
+<!--                <div class="cardAttraction">-->
+                    <div class="favourites" id="favoritesList">
                     </div>
-                </div>
+<!--                </div>-->
             </div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
-            </div>
-        </div>
-        <div class="fh5co-listing">
-            <div class="container">
-                <div class="row">
-                    <div id="comments"></div>
-                    <div class="card">
-                        <div id="comment-section"></div>
-                    </div>
-                    </div>
-
-                </div>
             </div>
         </div>
         <?php
@@ -75,7 +60,6 @@
         ?>
     </div>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDdM9r54y8zfnzG36y0JMpayRCyQj1TU2o&callback=initMap"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.easing.1.3.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>

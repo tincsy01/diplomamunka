@@ -54,7 +54,7 @@ session_start();
                                         <a href="./index.php">Home</a>
                                     </li>';
                                 echo'<li>
-                                        <a href="#">Favourites</a>
+                                        <a href="./favourites.php">Favourites</a>
                                     </li>';
                                 echo'<li>
                                         <a href="./cities.php">Cities</a>
@@ -63,7 +63,7 @@ session_start();
                                         <a href="#" class="fh5co-sub-ddown">Tours</a>
                                         <ul class="fh5co-sub-menu">
                                             <li><a href="./make_tour.php" target="_blank">Make a tour</a></li>
-                                            <li><a href="#" target="_blank">My tours</a></li>
+                                            <li><a href="./tours.php" target="_blank">My tours</a></li>
                                         </ul>
                                     </li>';
                                 echo'<li>

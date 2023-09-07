@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (data) {
                 if (data.success) {
                     alert("Látogatók száma sikeresen frissítve.");
+                    window.location.reload();
                 } else {
                     alert("Hiba történt a látogatók számának frissítése közben.");
                 }
