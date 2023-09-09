@@ -39,7 +39,8 @@
                 <a class="collapse-item" href="cities.php">Cities</a>
                 <a class="collapse-item" href="users.php">Users</a>
                 <a class="collapse-item" href="workers.php">Workers</a>
-                <a class="collapse-item" href="cards.html">Organizations</a>
+                <a class="collapse-item" href="organizations.php">Organizations</a>
+                <a class="collapse-item" href="categories.php">Categories</a>
             </div>
         </div>
     </li>
@@ -56,27 +57,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Statistics from:</h6>
                 <a class="collapse-item" href="statistic_tours.php">Users</a>
-                <a class="collapse-item" href="utilities-border.html">Cities</a>
-<!--                <a class="collapse-item" href="utilities-animation.html">Animations</a>-->
-<!--                <a class="collapse-item" href="utilities-other.html">Other</a>-->
+<!--                <a class="collapse-item" href="utilities-border.html">Cities</a>-->
             </div>
         </div>
     </li>
-    <!-- Nav Item - Pages Collapse Menu -->
-<!--    <li class="nav-item">-->
-<!--        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"-->
-<!--           aria-expanded="true" aria-controls="collapseTwo">-->
-<!--            <i class="fas fa-fw fa-cog"></i>-->
-<!--            <span>Workers</span>-->
-<!--        </a>-->
-<!--        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">-->
-<!--            <div class="bg-white py-2 collapse-inner rounded">-->
-<!--                <h6 class="collapse-header">Custom Components:</h6>-->
-<!--                <a class="collapse-item" href="buttons.html">List</a>-->
-<!--                <a class="collapse-item" href="cards.html">Create</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </li>-->
     <!-- Divider -->
     <hr class="sidebar-divider">
 

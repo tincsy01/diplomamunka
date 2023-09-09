@@ -67,7 +67,7 @@ session_start();
                                         </ul>
                                     </li>';
                                 echo'<li>
-                                        <a href="#">Log out</a>
+                                        <a href="./logout.php">Log out</a>
                                     </li>';
                                 break;
                             case 3:
@@ -83,23 +83,26 @@ session_start();
                                     </li>';
 //                                echo'<li>
 //                                        <a href="#">Statistics</a>
-//                                    </li>';
+//                                    </li>';1
                                 echo'<li>
                                         <a href="./logout.php">Log out</a>
                                     </li>';
                                 break;
                             case 4 :
                                 echo'<li class="active">
-                                        <a href="./views_mobile/worker_index.php">Home</a>
+                                        <a href="./index.php">Home</a>
                                     </li>';
                                 echo'<li>
-                                       <a href="./views_mobile/coupons.php">Coupons</a>
+                                       <a href="./coupons.php">Coupons</a>
                                     </li>';
                                 echo'<li>
-                                       <a href="#">Statistics</a>
+                                       <a href="./statistic.php">Statistics</a>
                                     </li>';
                                 echo'<li>
-                                        <a href="./views_website/logout.php">Log out</a>
+                                       <a href="./complaints.php">Complaints</a>
+                                    </li>';
+                                echo'<li>
+                                        <a href="../views_website/logout.php">Log out</a>
                                     </li>';
                         }
                     }
@@ -116,43 +119,6 @@ session_start();
                     }
 
                     ?>
-<!--                    <li class="active">-->
-<!--                        <a href="../../../views_website/index.php">Home</a>-->
-<!--                    </li>-->
-<!--                    <li><a href="../../../views_website/registration.php">Registration</a></li>-->
-<!--                    <li>-->
-<!--                        <a href="listing.html" class="fh5co-sub-ddown">Listing</a>-->
-<!--                        <ul class="fh5co-sub-menu">-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=build-free-html5-bootstrap-template" target="_blank">Build</a></li>-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=work-free-html5-template-bootstrap" target="_blank">Work</a></li>-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=light-free-html5-template-bootstrap" target="_blank">Light</a></li>-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=relic-free-html5-template-using-bootstrap" target="_blank">Relic</a></li>-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=display-free-html5-template-using-bootstrap" target="_blank">Display</a></li>-->
-<!--                            <li><a href="http://freehtml5.co/preview/?item=sprint-free-html5-template-bootstrap" target="_blank">Sprint</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="#" class="fh5co-sub-ddown">Dropdown</a>-->
-<!--                        <ul class="fh5co-sub-menu">-->
-<!--                            <li><a href="left-sidebar.html">Web Development</a></li>-->
-<!--                            <li><a href="right-sidebar.html">Branding &amp; Identity</a></li>-->
-<!--                            <li>-->
-<!--                                <a href="#" class="fh5co-sub-ddown">Free HTML5</a>-->
-<!--                                <ul class="fh5co-sub-menu">-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=build-free-html5-bootstrap-template" target="_blank">Build</a></li>-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=work-free-html5-template-bootstrap" target="_blank">Work</a></li>-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=light-free-html5-template-bootstrap" target="_blank">Light</a></li>-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=relic-free-html5-template-using-bootstrap" target="_blank">Relic</a></li>-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=display-free-html5-template-using-bootstrap" target="_blank">Display</a></li>-->
-<!--                                    <li><a href="http://freehtml5.co/preview/?item=sprint-free-html5-template-bootstrap" target="_blank">Sprint</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                            <li><a href="#">UI Animation</a></li>-->
-<!--                            <li><a href="#">Copywriting</a></li>-->
-<!--                            <li><a href="#">Photography</a></li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                    <li><a href="contact.html">Contact</a></li>-->
                 </ul>
             </nav>
         </div>

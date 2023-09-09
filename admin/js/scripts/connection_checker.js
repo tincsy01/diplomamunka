@@ -1,12 +1,12 @@
 function checkInternetConnectionAndRedirect() {
     if (navigator.onLine) {
         console.log("Az internetkapcsolat működik.");
-        clearInterval(interval); // Ha elérhető, leállítjuk az ellenőrzést.
-        window.location.href = "./users.php"; // Itt megadhatja a céloldal URL-jét.
+        clearInterval(interval);
+        window.location.href = "./users.php";
     } else {
         console.log("Az internetkapcsolat nincs aktív.");
         clearInterval(interval);
-        window.location.href = "./inactive.php"; // Itt megadhatja a céloldal URL-jét.
+        window.location.href = "./inactive.php";
     }
 }
 
