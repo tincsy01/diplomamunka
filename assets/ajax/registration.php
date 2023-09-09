@@ -10,11 +10,12 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $address = $_POST['address'];
+$phone = $_POST['phone'];
 if(!existsUser($username, $email)){
     $sql = "INSERT INTO users
-        (name, username, email, password, address, reg_expire, active, code, permission)
+        (name, username, email, password, address, phone, reg_expire, active, code, permission)
          VALUES
-        (:name,:username,:email, :password, :address, :reg_expire, :active, :code, :permission)";
+        (:name,:username,:email, :password, :address, :phone, :reg_expire, :active, :code, :permission)";
 
     $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
     $active = 0;
@@ -28,6 +29,7 @@ if(!existsUser($username, $email)){
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':password', $passwordHashed, PDO::PARAM_STR);
     $query->bindParam(':address', $address, PDO::PARAM_STR);
+    $query->bindParam(':phone', $phone, PDO::PARAM_STR);
     $query->bindParam(':reg_expire', $reg_expire, PDO::PARAM_STR);
     $query->bindParam(':active', $active, PDO::PARAM_STR);
     $query->bindParam(':code', $code, PDO::PARAM_STR);
@@ -35,6 +37,7 @@ if(!existsUser($username, $email)){
     $query->execute();
 
     sendData($email, $code);
+    header("Content-Type: application/json");
 
     $response = array('success' => true, 'message' => 'Registrated');
     echo json_encode($response);

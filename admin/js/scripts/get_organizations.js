@@ -67,6 +67,11 @@ $(document).ready(function() {
         var address = $("#address").val();
         var phone = $("#phone").val();
         var description = $("#description").val();
+        if (!orgName || !email || !city || !username || !password || !address || !phone || !description) {
+            alert("All fields must be filled in!");
+            return;
+        }
+
 
         // AJAX hívás az adatok továbbításához
         var formData = new FormData();
