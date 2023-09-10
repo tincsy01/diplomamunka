@@ -23,9 +23,8 @@ function getCategories() {
     });
 }
 $(document).ready(function() {
-    // A form elküldésének eseménykezelője
     $('#login-form').submit(function (e) {
-        e.preventDefault(); // Megakadályozza az alapértelmezett űrlap küldését
+        e.preventDefault();
 
         var attractionName = $('#attraction').val();
         var category = $('#category').val();
@@ -33,9 +32,14 @@ $(document).ready(function() {
         var latitude = $('#lattitude').val();
         var address = $('#address').val();
         var description = $('#description').val();
-        var photo = $('#photo')[0].files[0]; // Ezt a részt a feltöltött fájl kezelésére használjuk
+        var photo = $('#photo')[0].files[0];
 
-        // Új FormData példány létrehozása az űrlap adatainak tárolásához
+        // Ellenőrizd, hogy minden mező ki van-e töltve
+        if (!attractionName || !category || !longitude || !latitude || !address || !description || !photo) {
+            alert('Fill in all fields');
+            return;
+        }
+
         var formData = new FormData();
         formData.append('attraction', attractionName);
         formData.append('category', category);
@@ -45,7 +49,6 @@ $(document).ready(function() {
         formData.append('description', description);
         formData.append('photo', photo);
 
-        // Ajax kérés küldése a szerver felé
         $.ajax({
             url: '../../assets/ajax/insert_attraction.php',
             method: 'POST',
@@ -53,9 +56,8 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function (response) {
-                // Sikeres válasz esetén itt lehet folytatni
-                alert('A látnivaló sikeresen hozzáadva az adatbázishoz!');
-                // További teendők, például adatok újratöltése vagy átirányítás
+                alert('The point of interest has been successfully added.');
+                window.location.reload();
             },
             error: function () {
                 alert('Hiba történt az adatok küldése során.');
@@ -63,5 +65,4 @@ $(document).ready(function() {
         });
     });
     getCategories();
-
 });

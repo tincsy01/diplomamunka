@@ -1,7 +1,5 @@
 $(document).ready(function() {
-    var map; // Térkép változó
-
-    // AJAX hívás az adatok lekérdezéséhez
+    var map;
     function getAttractionData() {
         var urlParams = new URLSearchParams(window.location.search);
         var attractionId = urlParams.get('attraction_id');
@@ -34,39 +32,6 @@ $(document).ready(function() {
             }
         });
     }
-    // function getAttractionData() {
-    //     var urlParams = new URLSearchParams(window.location.search);
-    //     var attractionId = urlParams.get('attraction_id');
-    //
-    //     $.ajax({
-    //         url: '../../assets/ajax/get_attraction_data.php', // Az AJAX URL-je
-    //         type: 'GET',
-    //         dataType: 'json',
-    //         data: { attraction_id: attractionId },
-    //         success: function(response) {
-    //             // Adatok megjelenítése a div-ben
-    //             var attractionDataDiv = $('.attractionData');
-    //             var dataHtml = '<h2>' + response.name + '</h2>' +
-    //                 '<p>Attraction ID: ' + response.attraction_id + '</p>' +
-    //                 '<p>Popular: ' + response.popular + '</p>' +
-    //                 '<img src="/assets/images/attractions/' + response.image + '" alt="' + response.name + '" class="col-lg-4 col-sm-4 col-xs-8">' +
-    //                 '<p>Description: ' + response.description + '</p>' +
-    //                 '<p>Address: ' + response.address + '</p>';
-    //             attractionDataDiv.html(dataHtml);
-    //
-    //             // Kedvencekhez adás/eltávolítás funkció és gomb hozzáadása
-    //             checkFavouriteStatus(attractionId);
-    //
-    //             // Térkép inicializálása
-    //             initMap(response.longitude, response.lattitude);
-    //         },
-    //         error: function() {
-    //             alert('Error while fetching data.');
-    //         }
-    //     });
-    // }
-
-    // Hívjuk meg a függvényt
     getAttractionData();
 
     function initMap(attractions) {
@@ -84,8 +49,8 @@ $(document).ready(function() {
                 title: attraction.name
             });
         });
-    };
-    // AJAX hívás a kedvencek lekérdezéséhez és a gombok hozzáadásához
+    }
+
     function checkFavouriteStatus(attractionId) {
         $.ajax({
             url: '../../assets/ajax/check_favorite.php',
@@ -119,7 +84,6 @@ $(document).ready(function() {
             dataType: 'json',
             data: { attraction_id: attractionId },
             success: function(response) {
-                // Frissítsük a gomb szövegét az új állapothoz
                 var favoriteButton = $('#favorite-button[attraction-id="' + attractionId + '"]');
                 if (favoriteButton.text() === 'Add to Favorites') {
                     favoriteButton.text('Remove from Favorites');
