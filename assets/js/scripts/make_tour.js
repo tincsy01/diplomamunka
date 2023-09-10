@@ -61,20 +61,16 @@ function loadAttractions(cityId) {
     };
     xhr.send();
 }
-
 function saveTour() {
     var cityId = $('#city').val();
     var attractionIds = [];
     $('input[name="attraction_ids[]"]:checked').each(function() {
         attractionIds.push($(this).val());
     });
-    // console.log(attractionIds);
     var date = $('#date').val();
     var time = $('#time').val();
-    console.log(time);
-    // Ha nincs kiválasztva város vagy látványosság, vagy a dátum és idő nincs megadva, akkor hibaüzenetet jelenítünk meg
     if (!cityId || attractionIds.length === 0 || !date || !time) {
-        alert('Kérlek töltsd ki az összes mezőt.');
+        alert('Please fill in all fields.');
         return;
     }
 
@@ -87,15 +83,57 @@ function saveTour() {
             date: date,
             time: time
         },
-        dataType: 'json',
-        success: function(response) {
-            alert('A túra sikeresen hozzáadva!');
+        success: function(responseText) {
+            try {
+                var response = JSON.parse(responseText);
+                if (response.success) {
+                    alert(response.message);
+                    window.location.reload();
+                } else {
+                    alert('Hiba: ' + response.message);
+                }
+            } catch (error) {
+                alert('Hiba: Nem sikerült feldolgozni a választ.');
+            }
         },
         error: function() {
-            alert('Hiba történt a túra hozzáadása során.');
+            alert('Hiba: Nem sikerült kommunikálni a szerverrel.');
         }
     });
 }
+
+
+// function saveTour() {
+//     var cityId = $('#city').val();
+//     var attractionIds = [];
+//     $('input[name="attraction_ids[]"]:checked').each(function() {
+//         attractionIds.push($(this).val());
+//     });
+//     var date = $('#date').val();
+//     var time = $('#time').val();
+//     if (!cityId || attractionIds.length === 0 || !date || !time) {
+//         alert('Kérlek töltsd ki az összes mezőt.');
+//         return;
+//     }
+//
+//     $.ajax({
+//         url: '../../assets/ajax/insert_tour.php',
+//         method: 'POST',
+//         data: {
+//             city_id: cityId,
+//             attraction_ids: attractionIds,
+//             date: date,
+//             time: time
+//         },
+//         dataType: 'json',
+//         success: function(response) {
+//             alert('Added successfully');
+//         },
+//         error: function() {
+//             alert('Error');
+//         }
+//     });
+// }
 $(document).ready(function() {
     getCities();
     $('#login-form').submit(function(event) {

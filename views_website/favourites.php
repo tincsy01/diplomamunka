@@ -47,10 +47,8 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
-<!--                <div class="cardAttraction">-->
                     <div class="favourites" id="favoritesList">
                     </div>
-<!--                </div>-->
             </div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
             </div>

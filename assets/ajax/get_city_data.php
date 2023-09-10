@@ -30,6 +30,10 @@ if (isset($_GET['city_id'])) {
             'attractions' => $attractions
         );
 
+        if (empty($attractions)) {
+            // Ha nincsenek látnivalók a városban, adjunk hozzá egy üzenetet a válaszhoz
+            $response['message'] = 'Nincsenek látnivalók ebben a városban.';
+        }
         // JSON formátumba alakítás és válasz küldése
         header('Content-Type: application/json');
         echo json_encode($response);
