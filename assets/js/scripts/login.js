@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
 
+        // Ellenőrizd, hogy mindkét mezőt kitöltötték-e
+        if (!username || !password) {
+            alert("Please fill in all fields!");
+            return;
+        }
+
         // AJAX kérés inicializálása
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "../../assets/ajax/login.php", true);
@@ -16,13 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 if (response.success) {
-                    // window.location.href = "index.php";
                     window.location.href = '../'+response.url;
                 } else {
                     alert(response.message);
                 }
             } else {
-                // Hiba esetén megjelenítjük a hibaüzenetet
                 alert("Hiba történt. Kérlek, próbáld újra.");
             }
         };
