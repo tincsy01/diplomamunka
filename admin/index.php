@@ -18,6 +18,8 @@
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -27,7 +29,7 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="js/scripts/get_categories.js"></script>
+    <script src="js/scripts/index_statistic.js"></script>
 
 </head>
 
@@ -53,7 +55,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">WELCOME ADMIN!</h1>
+                <h1 class="h3 mb-4 text-gray-800">Welcome!</h1>
 
                 <div class="row">
 
@@ -62,71 +64,17 @@
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">List of categories</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">List of statistic</h6>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <button type="button" class="btn btn-success" id="newCategory">Add new category</button>
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                        <tr>
-                                            <th>Category</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </thead>
-                                        <tfoot>
-                                        <tr>
-                                            <th>Category</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="newCategoryModal" class="modal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Add New Category</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="newCityForm">
-                                        <div class="form-group">
-                                            <label for="category">Category</label>
-                                            <input type="text" class="form-control" id="category" name="category" required>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="addCategoryBtn" class="btn btn-primary">Add Category</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="deleteCategoryModal" tabindex="-1" role="dialog" aria-labelledby="deleteCategoryModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteCategoryModalLabel">Delete Category</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Are you sure you want to delete the category?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
-                                </div>
+                                <span class="title">Statistics</span>
+                                <!-- Select mező a kiválasztáshoz -->
+                                <select id="chartType" class="form-control">
+                                    <option value="months">Months</option>
+                                    <option value="days">Days</option>
+                                </select>
+                                <!-- A diagram tartalmi része -->
+                                <canvas id="myChart"></canvas>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const attractionsTable = document.getElementById("attractionsTable").getElementsByTagName("tbody")[0];
 
-    // Make an AJAX request to get attractions data
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "../../assets/ajax/get_attractions.php", true);
     xhr.onload = function() {
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     xhr.send();
 
-    // Populate the attractions table with data
     function populateAttractionsTable(attractions) {
         attractions.forEach(attraction => {
             const row = attractionsTable.insertRow();
@@ -121,7 +119,7 @@ $(document).on("click", ".deleteBtn", function() {
         }, function(data) {
             if (data.success) {
                 alert(data.msg);
-                location.reload();
+                window.location.reload();
             } else {
                 alert(data.msg);
             }

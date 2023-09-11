@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../../config/config.php';
-require_once '../../config/db_config.php';
+require_once '../php/config.php';
+require_once '../php/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 // Ellenőrizzük, hogy a napok vagy hónapok vannak-e kiválasztva

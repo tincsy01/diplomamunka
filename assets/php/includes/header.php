@@ -111,6 +111,9 @@ session_start();
                                 <a href="./index.php">Home</a>
                             </li>';
                         echo '<li>
+                                <a href="./cities.php">Cities</a>
+                            </li>';
+                        echo '<li>
                                 <a href="./registration.php">Registration</a>
                             </li>';
                         echo '<li>
