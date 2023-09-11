@@ -10,10 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["option"])) {
     $data = array();
 
     if ($option === "days") {
-        // Ha a napok vannak kiválasztva, akkor napok alapján kérjük le az adatokat
         $sql = "SELECT DAYNAME(date) AS day, SUM(num_of_visitors) AS visitors FROM visitors GROUP BY DAYNAME(date)";
     } elseif ($option === "months") {
-        // Ha a hónapok vannak kiválasztva, akkor hónapok alapján kérjük le az adatokat
         $sql = "SELECT MONTHNAME(date) AS month, SUM(num_of_visitors) AS visitors FROM visitors GROUP BY MONTH(date)";
     }
 

@@ -57,7 +57,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-10">
 
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">

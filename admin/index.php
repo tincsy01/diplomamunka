@@ -64,10 +64,9 @@
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">List of statistic</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">List of visitors daily and monthly</h6>
                             </div>
                             <div class="card-body">
-                                <span class="title">Statistics</span>
                                 <!-- Select mező a kiválasztáshoz -->
                                 <select id="chartType" class="form-control">
                                     <option value="months">Months</option>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>TenderTours-Admin</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -53,11 +53,11 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Cities</h1>
+                <h1 class="h3 mb-4 text-gray-800">Workers</h1>
 
                 <div class="row">
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-10">
 
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">

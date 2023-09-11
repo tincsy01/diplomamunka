@@ -3,7 +3,6 @@ require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-// Ellenőrizzük, hogy az attraction_id megléte
 if (!isset($_GET['attraction_id'])) {
     die("Missing attraction ID");
 }
@@ -11,13 +10,13 @@ if (!isset($_GET['attraction_id'])) {
 $attraction_id = $_GET['attraction_id'];
 
 // Lekérdezzük a kommenteket az adott attraction-höz
-$sql = "SELECT * FROM comments WHERE attraction_id = :attraction_id";
+//$sql = "SELECT c.date, c.comment, u.usernme, c.evaluation FROM comments c INNER JOIN users u ON c.user_id = u.user_id WHERE attraction_id = :attraction_id";
+$sql = "SELECT c.date, c.comment, u.username, c.evaluation FROM comments c INNER JOIN users u ON c.user_id = u.user_id WHERE attraction_id = :attraction_id";
 $query = $pdo->prepare($sql);
 $query->bindParam(':attraction_id', $attraction_id);
 $query->execute();
 $comments = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// Válasz elküldése JSON formátumban
 $response = array();
 
 if ($comments) {
@@ -27,6 +26,5 @@ if ($comments) {
     $response['success'] = false;
     $response['message'] = "Failed to load comments.";
 }
-
 header('Content-Type: application/json');
 echo json_encode($response);

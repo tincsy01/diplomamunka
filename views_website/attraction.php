@@ -51,7 +51,6 @@
                 <div class="cardAttraction">
                     <div class="attractionData">
                         <button id="favorite-button" class="btn">Add to Favorites</button>');
-
                     </div>
                     <div id="tourMap" style="height: 300px"></div>
                 </div>
@@ -62,11 +61,10 @@
         <div class="fh5co-listing">
             <div class="container">
                 <div class="row">
-                    <div id="comments"></div>
                     <div class="card">
                         <div id="comment-section"></div>
                     </div>
-                    </div>
+                    <div id="comments" class="comments-list"></div>
 
                 </div>
             </div>
