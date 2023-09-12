@@ -1,15 +1,14 @@
 $(document).ready(function() {
     $("#login-form").submit(function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
+        e.preventDefault();
 
-        // Get the complaint message from the textarea
         var complaintMessage = $("#complaint").val();
+        var status = $("#status").val();
 
-        // Perform AJAX request to submit the complaint
         $.ajax({
             type: "POST",
             url: "../../assets/ajax/insert_complaint.php",
-            data: { complaint: complaintMessage },
+            data: { complaint: complaintMessage, status: status },
             success: function(response) {
                 window.location.reload();
             },
@@ -18,37 +17,92 @@ $(document).ready(function() {
             }
         });
     });
-
     function fetchComplaints() {
         $.ajax({
             type: "GET",
-            url: "../../assets/ajax/get_complaints.php", // Replace with the actual URL to fetch complaints
+            url: "../../assets/ajax/get_complaints.php",
             success: function(response) {
-                $("#complaintList").empty(); // Töröljük az előző tartalmat
+                $("#complaintList").empty();
 
                 if (response.length > 0) {
-                    // Iterálunk a panaszokon és hozzáadjuk a listához
                     $.each(response, function(index, complaint) {
                         var complaintItem = $("<div>", {
                             "class": "col-md-6 col-sm-6 fh5co-item-wrap"
                         });
 
+                        var backgroundColor = "";
+                        switch (complaint.status) {
+                            case 4:
+                                backgroundColor = "green";
+                                break;
+                            case 3:
+                                backgroundColor = "red";
+                                break;
+                            case 1:
+                                backgroundColor = "yellow";
+                                break;
+                            case 2:
+                                backgroundColor = "orange";
+                                break;
+                            default:
+                                backgroundColor = "white";
+                        }
+
                         var complaintContent = $("<div>", {
-                            "class": "fh5co-listing-item"
+                            "class": "fh5co-listing-item",
+                            "css": {
+                                "background-color": backgroundColor
+                            }
                         }).append(
                             $("<h3>", {
                                 "text": "Complaint #" + (index + 1)
                             }),
                             $("<p>", {
                                 "text": complaint.complaint
-                            })
+                            }),
                         );
+
+                        var editButton = $("<button>", {
+                            "text": "Update",
+                            "class": "btn btn-primary edit-button"
+                        });
+
+                        editButton.data("complaint-id", complaint.complaint_id);
+
+                        complaintContent.append(editButton);
 
                         complaintItem.append(complaintContent);
                         $("#complaintList").append(complaintItem);
+
+                        editButton.click(function() {
+                            var complaintId = $(this).data("complaint-id");
+                            $("#updateComplaintModal").modal("show");
+                            $("#saveComplaintButton").click(function() {
+                                // A status érték és a complaint_id lekérése
+                                var status = $("#statusUpdate").val();
+
+                                // AJAX kérés küldése az update_complaing.php szkriptnek
+                                $.ajax({
+                                    type: "POST",
+                                    url: "../../assets/ajax/update_complaint.php",
+                                    data: {
+                                        status: status,
+                                        complaint_id: complaintId
+                                    },
+                                    success: function(response) {
+                                      window.location.reload();
+                                    },
+                                    error: function() {
+                                        alert("Error updating complaint.");
+                                    }
+                                });
+
+                                // Bezárjuk a modal-t
+                                $("#updateComplaintModal").modal("hide");
+                            });
+                        });
                     });
                 } else {
-                    // Ha nincsenek panaszok
                     $("#complaintList").append($("<p>", {
                         "text": "No complaints found."
                     }));
@@ -59,73 +113,5 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Panaszok lekérésének és megjelenítésének indítása
     fetchComplaints();
 });
-
-
-// $(document).ready(function() {
-//     $("#login-form").submit(function(e) {
-//         e.preventDefault(); // Prevent the form from submitting normally
-//
-//         // Get the complaint message from the textarea
-//         var complaintMessage = $("#complaint").val();
-//
-//         // Perform AJAX request to submit the complaint
-//         $.ajax({
-//             type: "POST",
-//             url: "../../assets/ajax/insert_complaint.php",
-//             data: { complaint: complaintMessage },
-//             success: function(response) {
-//               window.location.reload();
-//             },
-//             error: function() {
-//                 alert("Error submitting complaint.");
-//             }
-//         });
-//     });
-//     function fetchComplaints() {
-//         $.ajax({
-//             type: "GET",
-//             url: "../../assets/ajax/get_complaints.php", // Replace with the actual URL to fetch complaints
-//             success: function(response) {
-//                 $("#complaintList").empty(); // Töröljük az előző tartalmat
-//
-//                 if (response.length > 0) {
-//                     // Iterálunk a panaszokon és hozzáadjuk a listához
-//                     $.each(response, function(index, complaint) {
-//                         var complaintItem = $("<div>", {
-//                             "class": "col-md-6 col-sm-6 fh5co-item-wrap"
-//                         });
-//
-//                         var complaintContent = $("<div>", {
-//                             "class": "fh5co-listing-item"
-//                         }).append(
-//                             $("<h3>", {
-//                                 "text": "Complaint #" + (index + 1)
-//                             }),
-//                             $("<p>", {
-//                                 "text": complaint.complaint
-//                             })
-//                         );
-//
-//                         complaintItem.append(complaintContent);
-//                         $("#complaintList").append(complaintItem);
-//                     });
-//                 } else {
-//                     // Ha nincsenek panaszok
-//                     $("#complaintList").append($("<p>", {
-//                         "text": "No complaints found."
-//                     }));
-//                 }
-//             },
-//             error: function() {
-//                 alert("Error fetching complaints.");
-//             }
-//         });
-//     }
-//
-//     // Panaszok lekérésének és megjelenítésének indítása
-//     fetchComplaints();
-// });
