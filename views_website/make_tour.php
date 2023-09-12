@@ -28,9 +28,12 @@
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     <script src="../assets/js/scripts/make_tour.js"></script>
 </head>
 <body>
@@ -54,8 +57,13 @@
                             <label for="city">City</label>
                         </div>
                         <div id="attractions">
-                            <div id="attractionList"></div>
+                            <select class="js-example-basic-multiple" name="attraction_ids[]" multiple="multiple">
+                                <!-- Itt fognak megjelenni a látványosságok -->
+                            </select>
                         </div>
+<!--                        <div id="attractions">-->
+<!--                            <div id="attractionList"></div>-->
+<!--                        </div>-->
                         <div class="group">
                             <input placeholder="‎" type="date" id="date" name="date">
                             <label for="date">Date</label>
