@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var map;
+    $('.user-logged-in').hide();
     function getAttractionData() {
         var urlParams = new URLSearchParams(window.location.search);
         var attractionId = urlParams.get('attraction_id');
@@ -22,7 +23,6 @@ $(document).ready(function() {
 
                 // Kedvencekhez adás/eltávolítás funkció és gomb hozzáadása
                 checkFavouriteStatus(attractionId);
-
                 // Inicializáljuk a térképet az adott látványosság koordinátáival
                 var attractions = [response]; // Egyetlen látványosság adataival tömbben
                 initMap(attractions);
@@ -33,7 +33,7 @@ $(document).ready(function() {
         });
     }
     getAttractionData();
-
+    loginStatus();
     function initMap(attractions) {
         var center = {lat: 47.4977975, lng: 19.0403225};
         var map = new google.maps.Map(document.getElementById('tourMap'), {
@@ -93,6 +93,25 @@ $(document).ready(function() {
             },
             error: function() {
                 alert('Error while toggling favorite status.');
+            }
+        });
+    }
+    function loginStatus(){
+        $.ajax({
+            url: '../../assets/ajax/get_login.php',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response === true) {
+                    $('.user-logged-in').show();
+                    checkFavouriteStatus(attractionId);
+
+                } else {
+                    $('.user-logged-in').hide();
+                }
+            },
+            error: function() {
+                alert('Error while checking login status.');
             }
         });
     }

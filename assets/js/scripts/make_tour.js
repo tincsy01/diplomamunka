@@ -23,50 +23,18 @@ function getCities() {
         }
     });
 }
-
-// function loadAttractions(cityId) {
-//     var xhr = new XMLHttpRequest();
-//
-//     if (!cityId) {
-//         document.querySelector('#attractionList').innerHTML = '';
-//         return;
-//     }
-//
-//     xhr.open('GET', '../../assets/ajax/get_attraction_tours.php?city_id=' + cityId);
-//     xhr.onload = function() {
-//         if (xhr.status === 200) {
-//             // Az AJAX válaszban kapott látványosságokat checkbox-listává alakítjuk
-//             var attractions = JSON.parse(xhr.response);
-//             var attractionList = document.querySelector('#attractionList');
-//             attractionList.innerHTML = '';
-//
-//             for (var i = 0; i < attractions.length; i++) {
-//                 var attraction = attractions[i];
-//                 var checkboxLabel = document.createElement('label');
-//                 var checkbox = document.createElement('input');
-//                 checkbox.type = 'checkbox';
-//                 checkbox.name = 'attraction_ids[]';
-//                 checkbox.value = attraction.attraction_id;
-//                 checkboxLabel.appendChild(checkbox);
-//                 checkboxLabel.appendChild(document.createTextNode(attraction.name));
-//                 attractionList.appendChild(checkboxLabel);
-//                 attractionList.appendChild(document.createElement('br'));
-//             }
-//         } else {
-//             console.error('Hiba történt: ' + xhr.statusText);
-//         }
-//     };
-//     xhr.onerror = function() {
-//         console.error('Hiba történt az AJAX kérés során');
-//     };
-//     xhr.send();
-// }
 function loadAttractions(cityId) {
     var xhr = new XMLHttpRequest();
+    var attractionSelect = $('#attractions select');
+
+    // Először ürítsd ki a Select2 mezőt
+    attractionSelect.empty();
 
     if (!cityId) {
-        // Törlés helyett most beállítjuk a Select2-t
-        $('#attractions select').empty();
+        // Üres értéket adj hozzá a Select2-hez, hogy megjelenjen, amikor nincs város kiválasztva
+        attractionSelect.prepend('<option value="" disabled selected hidden>Select attractions</option>');
+        // Most inicializáljuk a Select2-t
+        attractionSelect.select2();
         return;
     }
 
@@ -74,10 +42,6 @@ function loadAttractions(cityId) {
     xhr.onload = function() {
         if (xhr.status === 200) {
             var attractions = JSON.parse(xhr.response);
-            var attractionSelect = $('#attractions select');
-
-            // Először ürítsd ki a Select2 mezőt
-            attractionSelect.empty();
 
             // Az AJAX válaszban kapott látványosságokat hozzáadod a Select2-höz
             attractions.forEach(function(attraction) {
@@ -99,15 +63,49 @@ function loadAttractions(cityId) {
     xhr.send();
 }
 
+// function loadAttractions(cityId) {
+//     var xhr = new XMLHttpRequest();
+//
+//     if (!cityId) {
+//         // Törlés helyett most beállítjuk a Select2-t
+//         $('#attractions select').empty();
+//         return;
+//     }
+//
+//     xhr.open('GET', '../../assets/ajax/get_attraction_tours.php?city_id=' + cityId);
+//     xhr.onload = function() {
+//         if (xhr.status === 200) {
+//             var attractions = JSON.parse(xhr.response);
+//             var attractionSelect = $('#attractions select');
+//
+//             // Először ürítsd ki a Select2 mezőt
+//             attractionSelect.empty();
+//
+//             // Az AJAX válaszban kapott látványosságokat hozzáadod a Select2-höz
+//             attractions.forEach(function(attraction) {
+//                 var option = $('<option></option>')
+//                     .val(attraction.attraction_id)
+//                     .text(attraction.name);
+//                 attractionSelect.append(option);
+//             });
+//
+//             // Most inicializáljuk a Select2-t
+//             attractionSelect.select2();
+//         } else {
+//             console.error('Hiba történt: ' + xhr.statusText);
+//         }
+//     };
+//     xhr.onerror = function() {
+//         console.error('Hiba történt az AJAX kérés során');
+//     };
+//     xhr.send();
+// }
 function saveTour() {
     var cityId = $('#city').val();
-    var attractionIds = [];
-    $('input[name="attraction_ids[]"]:checked').each(function() {
-        attractionIds.push($(this).val());
-    });
+    var selectedAttractionIds = $('#attractions select').val();
     var date = $('#date').val();
     var time = $('#time').val();
-    if (!cityId || attractionIds.length === 0 || !date || !time) {
+    if (!cityId || !selectedAttractionIds || selectedAttractionIds.length === 0 || !date || !time) {
         alert('Please fill in all fields.');
         return;
     }
@@ -117,11 +115,11 @@ function saveTour() {
         method: 'POST',
         data: {
             city_id: cityId,
-            attraction_ids: attractionIds,
+            attraction_ids: selectedAttractionIds,
             date: date,
             time: time
         },
-        success: function(responseText) {
+        success: function (responseText) {
             try {
                 var response = JSON.parse(responseText);
                 if (response.success) {
@@ -134,15 +132,18 @@ function saveTour() {
                 alert('Hiba: Nem sikerült feldolgozni a választ.');
             }
         },
-        error: function() {
+        error: function () {
             alert('Hiba: Nem sikerült kommunikálni a szerverrel.');
         }
     });
 }
-$(document).ready(function() {
+
+$(document).ready(function () {
     getCities();
-    $('#login-form').submit(function(event) {
+    // loadAttractions(cityId);
+    $('#login-form').submit(function (event) {
         event.preventDefault();
         saveTour();
     });
 });
+

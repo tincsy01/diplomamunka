@@ -40,9 +40,96 @@
 <div id="fh5co-wrapper">
     <div id="fh5co-page">
         <div id="fh5co-header">
-            <?php
-            require_once '../assets/php/includes/header.php';
-            ?>
+            <header id="fh5co-header-section">
+                <div class="container">
+                    <div class="nav-header">
+                        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                        <!--            <h1 id="fh5co-logo"><a href="../../../views_website/index.php">TenderTours</a></h1>-->
+                        <h1 id="fh5co-logo"><a href="./index.php">TenderTours</a></h1>
+                        <!-- START #fh5co-menu-wrap -->
+                        <nav id="fh5co-menu-wrap" role="navigation">
+                            <ul class="sf-menu" id="fh5co-primary-menu">
+                                <?php
+                                if(isset($_SESSION['permission'])){
+                                    switch ($_SESSION['permission']){
+                                        case 2:
+                                            echo'<li class="active">
+                                        <a href="./index.php">Home</a>
+                                    </li>';
+                                            echo'<li>
+                                        <a href="./favourites.php">Favourites</a>
+                                    </li>';
+                                            echo'<li>
+                                        <a href="./cities.php">Cities</a>
+                                    </li>';
+                                            echo' <li>
+                                        <a href="#" class="fh5co-sub-ddown">Tours</a>
+                                        <ul class="fh5co-sub-menu">
+                                            <li><a href="./make_tour.php" target="_blank">Make a tour</a></li>
+                                            <li><a href="./tours.php" target="_blank">My tours</a></li>
+                                        </ul>
+                                    </li>';
+                                            echo'<li>
+                                        <a href="./logout.php">Log out</a>
+                                    </li>';
+                                            break;
+                                        case 3:
+                                            echo'<li class="active">
+                                        <a href="./index.php">Home</a>
+                                    </li>';
+                                            echo' <li>
+                                        <a href="#" class="fh5co-sub-ddown">Attractions</a>
+                                        <ul class="fh5co-sub-menu">
+                                            <li><a href="./make_attraction.php" target="_blank">Make an attraction</a></li>
+                                            <li><a href="./attractions.php" target="_blank">My attractions</a></li>
+                                        </ul>
+                                    </li>';
+//                                echo'<li>
+//                                        <a href="#">Statistics</a>
+//                                    </li>';1
+                                            echo'<li>
+                                        <a href="./logout.php">Log out</a>
+                                    </li>';
+                                            break;
+                                        case 4 :
+                                            echo'<li class="active">
+                                        <a href="./index.php">Home</a>
+                                    </li>';
+                                            echo'<li>
+                                       <a href="./coupons.php">Coupons</a>
+                                    </li>';
+                                            echo'<li>
+                                       <a href="./statistic.php">Statistics</a>
+                                    </li>';
+                                            echo'<li>
+                                       <a href="./complaints.php">Complaints</a>
+                                    </li>';
+                                            echo'<li>
+                                        <a href="../views_website/logout.php">Log out</a>
+                                    </li>';
+                                    }
+                                }
+                                else{
+                                    echo'<li class="active">
+                                <a href="./index.php">Home</a>
+                            </li>';
+                                    echo '<li>
+                                <a href="./cities.php">Cities</a>
+                            </li>';
+                                    echo '<li>
+                                <a href="./registration.php">Registration</a>
+                            </li>';
+                                    echo '<li>
+                                <a href="./login.php">Login</a>
+                            </li>';
+                                }
+
+                                ?>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
@@ -57,13 +144,11 @@
                             <label for="city">City</label>
                         </div>
                         <div id="attractions">
-                            <select class="js-example-basic-multiple" name="attraction_ids[]" multiple="multiple">
-                                <!-- Itt fognak megjelenni a látványosságok -->
+                            <select class="js-example-basic-multiple" name="attraction_ids[]" multiple="multiple" >
+                                <option value="" disabled selected hidden>Placeholder szöveg</option>
                             </select>
+
                         </div>
-<!--                        <div id="attractions">-->
-<!--                            <div id="attractionList"></div>-->
-<!--                        </div>-->
                         <div class="group">
                             <input placeholder="‎" type="date" id="date" name="date">
                             <label for="date">Date</label>
@@ -85,14 +170,13 @@
         ?>
     </div>
 </div>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.easing.1.3.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.waypoints.min.js"></script>
-<script src="../assets/js/jquery.stellar.min.js"></script>
-<script src="../assets/js/hoverIntent.js"></script>
-<script src="../assets/js/superfish.js"></script>
-<script src="../assets/js/main.js"></script>
-
+<!--<script src="../assets/js/jquery.min.js"></script>-->
+<!--<script src="../assets/js/jquery.easing.1.3.js"></script>-->
+<!--<script src="../assets/js/bootstrap.min.js"></script>-->
+<!--<script src="../assets/js/jquery.waypoints.min.js"></script>-->
+<!--<script src="../assets/js/jquery.stellar.min.js"></script>-->
+<!--<script src="../assets/js/hoverIntent.js"></script>-->
+<!--<script src="../assets/js/superfish.js"></script>-->
+<!--<script src="../assets/js/main.js"></script>-->
 </body>
 </html>

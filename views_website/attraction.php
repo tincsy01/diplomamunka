@@ -48,9 +48,9 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
-                <div class="cardAttraction">
+                <div class="cardAttraction ">
                     <div class="attractionData">
-                        <button id="favorite-button" class="btn">Add to Favorites</button>');
+                        <button id="favorite-button" class="btn user-logged-in">Add to Favorites</button>
                     </div>
                     <div id="tourMap" style="height: 300px"></div>
                 </div>
@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row">
                     <div class="card">
-                        <div id="comment-section"></div>
+                        <div id="comment-section" class="user-logged-in"></div>
                     </div>
                     <div id="comments" class="comments-list"></div>
 
