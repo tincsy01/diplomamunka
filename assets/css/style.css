@@ -202,6 +202,13 @@ figure {
   margin-top: -5em;
   padding-bottom: 5em;
 }
+.fh5co-listins {
+  float: left;
+  position: relative;
+  width: 100%;
+  /*margin-top: -5em;*/
+  padding-bottom: 5em;
+}
 .fh5co-listing .fh5co-item-wrap {
   padding-left: 10px;
   padding-right: 10px;
@@ -1233,15 +1240,15 @@ tbody {
   left: 50%;
   transform: translate(-50%, -50%);
   /*width: 350px;*/
-  height: 160px;
-  background: #f7f9f9;
+  /*height: 160px;*/
+  /*background: #f7f9f9;*/
   padding: 10px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  z-index: 9999; /* A kívánt előtérbeli rétegszint */
+  z-index: 9999;
 }
 
 .card__title {
@@ -1305,6 +1312,35 @@ tbody {
   flex-direction: column;
   margin: 0 auto;
   margin-top: 150px;
+}
+
+.cardCity {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 500px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 150px;
+  overflow-y: auto;
+}
+@media (max-width: 992px) {
+  .cardCity {
+    width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+
+  }
+}
+@media (max-width: 768px) {
+  .cardCity {
+    width: 300px;
+    margin-top: 100px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
 }
 @media (max-width: 992px) {
   .cardAttraction {

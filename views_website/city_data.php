@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cities</title>
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -27,8 +27,12 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/favourite.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/get_city_data.js"></script>
@@ -42,30 +46,20 @@
             ?>
         </div>
         <div class="fh5co-hero">
-            <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
-                <div class="desc animate-box">
-                    <h2>Travel Around The World.</h2>
-                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>
-                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>
+            <div class="fh5co-overlay">
+                <div class="cardCity ">
+                    <div class="cityData">
+                    </div>
+                    <div id="tourMap" style="height: 300px"></div>
                 </div>
             </div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            </div>
         </div>
-        <div class="fh5co-listing">
+        <div class="fh5co-listings">
             <div class="container">
-                <div class="row" id="cityData">
-                    <div class="cityImage">
-                        <img src="../assets/images/cities/" alt="" class="cityImage">
-                    </div>
-                    <div class="cityDescription">
-
-                    </div>
-                    <div id="map" style="height: 400px;" class="col-lg-4 col-sm-4 col-xs-4"></div>
-                </div>
                 <h3>Attractions</h3>
-                <div id="attractions" class="attractions col-lg-10 col-sm-10 col-xs-10">
-
-                </div>
+                <div id="attractions" class="attractions"></div>
             </div>
         </div>
         <?php
@@ -73,6 +67,7 @@
         ?>
     </div>
 </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDdM9r54y8zfnzG36y0JMpayRCyQj1TU2o&callback=initMap"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.easing.1.3.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
@@ -81,5 +76,7 @@
 <script src="../assets/js/hoverIntent.js"></script>
 <script src="../assets/js/superfish.js"></script>
 <script src="../assets/js/main.js"></script>
+
 </body>
 </html>
+

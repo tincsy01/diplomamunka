@@ -41,18 +41,10 @@
             require_once '../assets/php/includes/header.php';
             ?>
         </div>
-        <div class="fh5co-hero">
-            <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background_worker.jpg);">
-                <div class="cardWelcome col-lg-5 col-sm-7 col-xs-7">
-                    <span class="card__title">Welcome back here!</span>
-<!--                    <p class="card__text">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</p>-->
-<!--                    <button class="card__button">Subscribe</button>-->
-                </div>
-
-
-            </div>
-
+        <div class="cardWelcome col-lg-5 col-sm-7 col-xs-7">
+            <span class="card__title">Welcome back here!</span>
+            <!--                    <p class="card__text">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</p>-->
+            <!--                    <button class="card__button">Subscribe</button>-->
         </div>
         <div class="fh5co-listing">
             <div class="container">
