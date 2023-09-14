@@ -9,7 +9,6 @@ $(document).ready(function() {
 
         $.each(data, function(index, value) {
             var updateBtn = '<button class="btn btn-primary btn-sm updateBtn" data-user-id="' + value.user_id + '" data-name="' + value.name + '" data-permission="' + value.permission + '" data-email="' + value.email + '">Update</button>';
-            var bannBtn = '<button class="btn btn-info btn-sm bannBtn" data-user-id="' + value.user_id + '">Banning</button>';
             var deleteBtn = '<button class="btn btn-danger btn-sm deleteBtn" data-user-id="' + value.user_id + '" data-name="' + value.name + '">Delete</button>';
 
             table.row.add([
@@ -18,7 +17,6 @@ $(document).ready(function() {
                 value.active,
                 value.permission,
                 updateBtn,
-                bannBtn,
                 deleteBtn
             ]).draw(false);
         });

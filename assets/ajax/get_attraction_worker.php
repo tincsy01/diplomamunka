@@ -4,7 +4,7 @@ require_once '../../config/db_config.php';
 require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-$sql = "SELECT attraction_id, name FROM attractions"; // Szükséges lekérdezésed
+$sql = "SELECT attraction_id, name FROM attractions";
 $query = $pdo->query($sql);
 $attractions = $query->fetchAll(PDO::FETCH_ASSOC);
 

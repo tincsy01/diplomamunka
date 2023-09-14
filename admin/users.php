@@ -74,7 +74,6 @@
                                             <th>Active</th>
                                             <th>Permission</th>
                                             <th>Update</th>
-                                            <th>Banning</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
@@ -85,7 +84,6 @@
                                             <th>Active</th>
                                             <th>Permission</th>
                                             <th>Update</th>
-                                            <th>Banning</th>
                                             <th>Delete</th>
                                         </tr>
                                         </tfoot>

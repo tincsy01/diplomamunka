@@ -10,7 +10,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
 
     // AJAX kérés elküldése
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../../assets/ajax/reset_password_confirm.php', true);
+    xhr.open('POST', '../assets/ajax/reset_password_confirm.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {

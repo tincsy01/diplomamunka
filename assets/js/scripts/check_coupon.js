@@ -7,7 +7,7 @@ $(document).ready(function() {
         var couponCode = $("#code").val();
         $.ajax({
             type: "POST",
-            url: "../../assets/ajax/check_coupon.php",
+            url: "../assets/ajax/check_coupon.php",
             data: { code: couponCode },
             success: function(response) {
                 var jsonResponse = JSON.parse(response); // A JSON választ parse-oljuk

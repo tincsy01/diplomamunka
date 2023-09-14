@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var descriptionValue = descriptionField.value; // TextArea érték
 
         // AJAX kérés fetch API-val
-        fetch("../../assets/ajax/add_visitors.php", {
+        fetch("../assets/ajax/add_visitors.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",

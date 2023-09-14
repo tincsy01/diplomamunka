@@ -202,11 +202,10 @@ figure {
   margin-top: -5em;
   padding-bottom: 5em;
 }
-.fh5co-listins {
+.fh5co-listings {
   float: left;
   position: relative;
   width: 100%;
-  /*margin-top: -5em;*/
   padding-bottom: 5em;
 }
 .fh5co-listing .fh5co-item-wrap {

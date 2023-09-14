@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const attractionsTable = document.getElementById("attractionsTable").getElementsByTagName("tbody")[0];
 
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "../../assets/ajax/get_attractions.php", true);
+    xhr.open("GET", "../assets/ajax/get_attractions.php", true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             const attractions = JSON.parse(xhr.responseText);
@@ -76,7 +76,7 @@ $(document).on("click", ".updateBtn", function() {
             var lattitude = $('input[name="lattitude"]').val();
             // var address = $('input[name="address"]').val();
             var description = $('textarea[name="description"]').val();
-            $.post("../../assets/ajax/update_attraction.php", {
+            $.post("../assets/ajax/update_attraction.php", {
                 attraction_id: attractionId,
                 name: attractionName,
                 category: category,
@@ -114,7 +114,7 @@ $(document).on("click", ".deleteBtn", function() {
 
     // Delete gombra kattintva elküldjük az attraction_id-t
     $('.deleteConf').click(function() {
-        $.post("../../assets/ajax/delete_attraction.php", {
+        $.post("../assets/ajax/delete_attraction.php", {
             attraction_id: attractionId
         }, function(data) {
             if (data.success) {
@@ -137,7 +137,7 @@ $(document).on("click", ".deleteBtn", function() {
 /*Functions*/
 function getCategories(callback) {
     $.ajax({
-        url: '../../assets/ajax/get_categories.php',
+        url: '../assets/ajax/get_categories.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {

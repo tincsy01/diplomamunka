@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $.ajax({
-        url: '../../assets/ajax/get_attraction_worker.php',
+        url: '../assets/ajax/get_attraction_worker.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
         // Űrlapadatok elküldése a worker_registration.php fájlnak
         $.ajax({
-            url: '../../assets/ajax/worker_registration.php',
+            url: '../assets/ajax/worker_registration.php',
             method: 'POST',
             data: formData,
             dataType: 'json',

@@ -33,16 +33,16 @@ $(document).ready(function() {
                         var backgroundColor = "";
                         switch (complaint.status) {
                             case 4:
-                                backgroundColor = "green";
+                                backgroundColor = "#AEC3AE";
                                 break;
                             case 3:
-                                backgroundColor = "red";
+                                backgroundColor = "#FF9B9B";
                                 break;
                             case 1:
-                                backgroundColor = "yellow";
+                                backgroundColor = "#F7E987";
                                 break;
                             case 2:
-                                backgroundColor = "orange";
+                                backgroundColor = "#FFC95F";
                                 break;
                             default:
                                 backgroundColor = "white";

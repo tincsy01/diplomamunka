@@ -81,9 +81,6 @@ session_start();
                                             <li><a href="./attractions.php" target="_blank">My attractions</a></li>
                                         </ul>
                                     </li>';
-//                                echo'<li>
-//                                        <a href="#">Statistics</a>
-//                                    </li>';1
                                 echo'<li>
                                         <a href="./logout.php">Log out</a>
                                     </li>';

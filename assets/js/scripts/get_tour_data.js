@@ -5,7 +5,7 @@ $(document).ready(function() {
         var tourId = urlParams.get('tour_id');
 
         $.ajax({
-            url: '../../assets/ajax/get_tour_data.php',
+            url: '../assets/ajax/get_tour_data.php',
             type: 'GET',
             dataType: 'json',
             data: { id: tourId },

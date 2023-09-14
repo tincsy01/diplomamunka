@@ -1,6 +1,6 @@
 function getCategories() {
     $.ajax({
-        url: '../../assets/ajax/get_categories.php',
+        url: '../assets/ajax/get_categories.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -50,7 +50,7 @@ $(document).ready(function() {
         formData.append('photo', photo);
 
         $.ajax({
-            url: '../../assets/ajax/insert_attraction.php',
+            url: '../assets/ajax/insert_attraction.php',
             method: 'POST',
             data: formData,
             contentType: false,

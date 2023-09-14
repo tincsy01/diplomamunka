@@ -12,7 +12,7 @@ $(document).ready(function() {
         else{
             $.ajax({
                 type: "POST",
-                url: "../../assets/ajax/reset_password.php",
+                url: "../assets/ajax/reset_password.php",
                 data: { email: email },
                 success: function(response) {
                     var jsonResponse = JSON.parse(response);

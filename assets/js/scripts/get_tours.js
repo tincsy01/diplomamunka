@@ -4,7 +4,7 @@ function redirectToTourPage(tourId) {
 
 function getTours() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../../assets/ajax/get_tours.php');
+    xhr.open('GET', '../assets/ajax/get_tours.php');
     xhr.onload = function() {
         if (xhr.status === 200) {
             var tours = JSON.parse(xhr.responseText);

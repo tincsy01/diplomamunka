@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: '../../assets/ajax/get_cities_index.php',
+        url: '../assets/ajax/get_cities_index.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {

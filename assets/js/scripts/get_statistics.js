@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     // Az adatok lekérése AJAX segítségével
     function fetchChartData(option) {
-        var url = "../../assets/ajax/get_data_statistics.php";
+        var url = "../assets/ajax/get_data_statistics.php";
         var data = { option: option };
 
         $.ajax({

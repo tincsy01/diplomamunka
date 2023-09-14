@@ -28,7 +28,6 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script src="js/scripts/index_statistic.js"></script>
 
 </head>
@@ -59,7 +58,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-sm-8 col-xs-8">
 
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">
@@ -77,8 +76,20 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-8 col-xs-8">
 
-
+                        <!-- Circle Buttons -->
+                        <div class="card shadow mb-6">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Statistic of 5 most visited city</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="cityChart2"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 

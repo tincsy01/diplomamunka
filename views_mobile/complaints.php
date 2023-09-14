@@ -68,7 +68,7 @@
 
             </div>
         </div>
-        <div class="fh5co-listing">
+        <div class="fh5co-listings">
             <div class="container">
                 <div class="row" id="complaintList">
                 </div>

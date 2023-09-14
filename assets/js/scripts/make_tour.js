@@ -1,6 +1,6 @@
 function getCities() {
     $.ajax({
-        url: '../../assets/ajax/get_city_tour.php',
+        url: '../assets/ajax/get_city_tour.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -38,7 +38,7 @@ function loadAttractions(cityId) {
         return;
     }
 
-    xhr.open('GET', '../../assets/ajax/get_attraction_tours.php?city_id=' + cityId);
+    xhr.open('GET', '../assets/ajax/get_attraction_tours.php?city_id=' + cityId);
     xhr.onload = function() {
         if (xhr.status === 200) {
             var attractions = JSON.parse(xhr.response);
@@ -62,44 +62,6 @@ function loadAttractions(cityId) {
     };
     xhr.send();
 }
-
-// function loadAttractions(cityId) {
-//     var xhr = new XMLHttpRequest();
-//
-//     if (!cityId) {
-//         // Törlés helyett most beállítjuk a Select2-t
-//         $('#attractions select').empty();
-//         return;
-//     }
-//
-//     xhr.open('GET', '../../assets/ajax/get_attraction_tours.php?city_id=' + cityId);
-//     xhr.onload = function() {
-//         if (xhr.status === 200) {
-//             var attractions = JSON.parse(xhr.response);
-//             var attractionSelect = $('#attractions select');
-//
-//             // Először ürítsd ki a Select2 mezőt
-//             attractionSelect.empty();
-//
-//             // Az AJAX válaszban kapott látványosságokat hozzáadod a Select2-höz
-//             attractions.forEach(function(attraction) {
-//                 var option = $('<option></option>')
-//                     .val(attraction.attraction_id)
-//                     .text(attraction.name);
-//                 attractionSelect.append(option);
-//             });
-//
-//             // Most inicializáljuk a Select2-t
-//             attractionSelect.select2();
-//         } else {
-//             console.error('Hiba történt: ' + xhr.statusText);
-//         }
-//     };
-//     xhr.onerror = function() {
-//         console.error('Hiba történt az AJAX kérés során');
-//     };
-//     xhr.send();
-// }
 function saveTour() {
     var cityId = $('#city').val();
     var selectedAttractionIds = $('#attractions select').val();
@@ -111,7 +73,7 @@ function saveTour() {
     }
 
     $.ajax({
-        url: '../../assets/ajax/insert_tour.php',
+        url: '../assets/ajax/insert_tour.php',
         method: 'POST',
         data: {
             city_id: cityId,

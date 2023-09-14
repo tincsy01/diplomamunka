@@ -3,7 +3,7 @@ $(document).ready(function () {
     var cityId = urlParams.get('city_id');
 
     $.ajax({
-        url: '../../assets/ajax/get_city_data.php',
+        url: '../assets/ajax/get_city_data.php',
         method: 'GET',
         data: { city_id: cityId },
         dataType: 'json',
@@ -15,7 +15,7 @@ $(document).ready(function () {
             cityDataHtml += '<h2>'+data.city_name+'</h2>';
             cityDataHtml += '<br>';
             cityDataHtml += '<div class="cityImage">';
-            cityDataHtml += '<img src="/assets/images/cities/' + data.image + '" alt="" class="cityImage col-lg-8 col-sm-8 col-xs-8">';
+            cityDataHtml += '<img src="../assets/images/cities/' + data.image + '" alt="" class="cityImage col-lg-8 col-sm-8 col-xs-8">';
             cityDataHtml += '</div>';
             cityDataHtml += '</div>';
             cityDataHtml += '<div class="col-lg-8 col-sm-8 col-xs-8">';

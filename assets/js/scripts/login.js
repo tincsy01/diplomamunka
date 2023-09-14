@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // AJAX kérés inicializálása
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../assets/ajax/login.php", true);
+        xhr.open("POST", "../assets/ajax/login.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         // AJAX válasz eseménykezelője

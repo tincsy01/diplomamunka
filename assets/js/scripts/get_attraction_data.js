@@ -6,7 +6,7 @@ $(document).ready(function() {
         var attractionId = urlParams.get('attraction_id');
 
         $.ajax({
-            url: '../../assets/ajax/get_attraction_data.php',
+            url: '../assets/ajax/get_attraction_data.php',
             type: 'GET',
             dataType: 'json',
             data: { attraction_id: attractionId },
@@ -16,7 +16,7 @@ $(document).ready(function() {
                 var dataHtml = '<h2>' + response.name + '</h2>' +
                     '<p>Attraction ID: ' + response.attraction_id + '</p>' +
                     '<p>Popular: ' + response.popular + '</p>' +
-                    '<img src="/assets/images/attractions/' + response.image + '" alt="' + response.name + '" class="col-lg-4 col-sm-4 col-xs-8">' +
+                    '<img src="../assets/images/attractions/' + response.image + '" alt="' + response.name + '" class="col-lg-4 col-sm-4 col-xs-8">' +
                     '<p>Description: ' + response.description + '</p>' +
                     '<p>Address: ' + response.address + '</p>';
                 attractionDataDiv.html(dataHtml);
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     function checkFavouriteStatus(attractionId) {
         $.ajax({
-            url: '../../assets/ajax/check_favorite.php',
+            url: '../assets/ajax/check_favorite.php',
             type: 'GET',
             dataType: 'json',
             data: { attraction_id: attractionId },
@@ -79,7 +79,7 @@ $(document).ready(function() {
     }
     function toggleFavourite(attractionId) {
         $.ajax({
-            url: '../../assets/ajax/toggle_favorite.php',
+            url: '../assets/ajax/toggle_favorite.php',
             type: 'POST',
             dataType: 'json',
             data: { attraction_id: attractionId },
@@ -96,23 +96,23 @@ $(document).ready(function() {
             }
         });
     }
-    function loginStatus(){
-        $.ajax({
-            url: '../../assets/ajax/get_login.php',
-            method: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                if (response === true) {
-                    $('.user-logged-in').show();
-                    checkFavouriteStatus(attractionId);
-
-                } else {
-                    $('.user-logged-in').hide();
-                }
-            },
-            error: function() {
-                alert('Error while checking login status.');
-            }
-        });
-    }
+    // function loginStatus(){
+    //     $.ajax({
+    //         url: '../assets/ajax/get_login.php',
+    //         method: 'GET',
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             if (response === true) {
+    //                 $('.user-logged-in').show();
+    //                 checkFavouriteStatus(attractionId);
+    //
+    //             } else {
+    //                 $('.user-logged-in').hide();
+    //             }
+    //         },
+    //         error: function() {
+    //             alert('Error while checking login status.');
+    //         }
+    //     });
+    // }
 });

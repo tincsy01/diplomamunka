@@ -3,7 +3,7 @@ $(document).ready(function() {
         var urlParams = new URLSearchParams(window.location.search);
         var attractionId = urlParams.get('attraction_id');
         $.ajax({
-            url: '../../assets/ajax/get_comments.php',
+            url: '../assets/ajax/get_comments.php',
             type: 'GET',
             dataType: 'json',
             data: { attraction_id: attractionId },
@@ -38,7 +38,7 @@ $(document).ready(function() {
         var attractionId = urlParams.get('attraction_id');
 
         $.ajax({
-            url: '../../assets/ajax/check_visit.php',
+            url: '../assets/ajax/check_visit.php',
             type: 'GET',
             dataType: 'json',
             data: { attraction_id: attractionId },
@@ -75,7 +75,7 @@ $(document).ready(function() {
                         var formData = $(this).serialize();
 
                         $.ajax({
-                            url: '../../assets/ajax/add_comment.php', // Frissítsd az URL-t a PHP fájlnak
+                            url: '../assets/ajax/add_comment.php', // Frissítsd az URL-t a PHP fájlnak
                             type: 'POST',
                             dataType: 'json',
                             data: formData,
