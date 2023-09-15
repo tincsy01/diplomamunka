@@ -71,7 +71,6 @@ function saveTour() {
         alert('Please fill in all fields.');
         return;
     }
-
     $.ajax({
         url: '../assets/ajax/insert_tour.php',
         method: 'POST',
@@ -81,28 +80,50 @@ function saveTour() {
             date: date,
             time: time
         },
-        success: function (responseText) {
-            try {
-                var response = JSON.parse(responseText);
-                if (response.success) {
-                    alert(response.message);
-                    window.location.reload();
-                } else {
-                    alert('Hiba: ' + response.message);
-                }
-            } catch (error) {
-                alert('Hiba: Nem sikerült feldolgozni a választ.');
+        success: function (response) {
+            console.log(response);
+            if (response.success) {
+                alert(response.message);
+                window.location.reload();
+            } else {
+                alert('Hiba: ' + response.message);
             }
         },
-        error: function () {
-            alert('Hiba: Nem sikerült kommunikálni a szerverrel.');
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText); // Hiba részletek logolása
+            alert('Hiba történt a kommunikáció során: ' + error);
         }
     });
+    // $.ajax({
+    //     url: '../assets/ajax/insert_tour.php',
+    //     method: 'POST',
+    //     data: {
+    //         city_id: cityId,
+    //         attraction_ids: selectedAttractionIds,
+    //         date: date,
+    //         time: time
+    //     },
+    //     success: function (responseText) {
+    //         try {
+    //             var response = JSON.parse(responseText);
+    //             if (response.success) {
+    //                 alert(response.message);
+    //                 window.location.reload();
+    //             } else {
+    //                 alert('Hiba: ' + response.message);
+    //             }
+    //         } catch (error) {
+    //             alert('Hiba: Nem sikerült feldolgozni a választ.');
+    //         }
+    //     },
+    //     error: function () {
+    //         alert('Hiba: Nem sikerült kommunikálni a szerverrel.');
+    //     }
+    // });
 }
 
 $(document).ready(function () {
     getCities();
-    // loadAttractions(cityId);
     $('#login-form').submit(function (event) {
         event.preventDefault();
         saveTour();

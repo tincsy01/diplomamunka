@@ -73,7 +73,7 @@
                         </div>
                         <div class="group">
                             <select name="workingAt" id="workingAt">
-                                <option value="0">Select</option>
+                                <option value="">Select</option>
                             </select>
                             <label for="workingAt">Working At</label>
                         </div>

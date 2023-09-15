@@ -4,7 +4,7 @@ require_once '../../config/db_config.php';
 require_once '../php/includes/functions.php';
 
 $pdo = connectDatabase($dsn, $pdoOptions);
-session_start();
+//session_start();
 
 $city_id = $_POST['city_id'];
 $user_id = $_SESSION['user_id'];
@@ -18,7 +18,7 @@ $selectedDateTime = new DateTime($datetime);
 
 if ($selectedDateTime < $currentDateTime) {
     header('Content-Type: application/json');
-    $response = array('success' => false, 'message' => 'A kiválasztott dátum már elmúlt.');
+    $response = array('success' => false, 'message' => 'The selected date has already passed.');
 } else {
     $sql1 = "INSERT INTO tours(city_id, user_id, date) VALUES (:city_id, :user_id, :date)";
     $query1 = $pdo->prepare($sql1);

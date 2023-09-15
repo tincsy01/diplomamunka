@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/admin/ajax/get_users.php",
+        url: "../admin/ajax/get_users.php",
         method: "GET",
         dataType: "json"
     }).done(function(data) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
         var updatedActive = $("#updateActive").val();
 
         $.ajax({
-            url: "/admin/ajax/update_user.php",
+            url: "../admin/ajax/update_user.php",
             method: "POST",
             data: {
                 userId: userId,
@@ -89,7 +89,7 @@ $(document).ready(function() {
         $("#confirmDeleteBtn").click(function () {
             // AJAX hívás
             $.ajax({
-                url: "/admin/ajax/delete_user.php",
+                url: "../admin/ajax/delete_user.php",
                 method: "POST",
                 data: {
                     user_id: userId

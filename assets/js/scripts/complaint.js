@@ -5,9 +5,14 @@ $(document).ready(function() {
         var complaintMessage = $("#complaint").val();
         var status = $("#status").val();
 
+        if (!complaintMessage || !status) {
+            alert('Fill in all fields!');
+            return;
+        }
+
         $.ajax({
             type: "POST",
-            url: "../../assets/ajax/insert_complaint.php",
+            url: "../assets/ajax/insert_complaint.php",
             data: { complaint: complaintMessage, status: status },
             success: function(response) {
                 window.location.reload();
@@ -20,7 +25,7 @@ $(document).ready(function() {
     function fetchComplaints() {
         $.ajax({
             type: "GET",
-            url: "../../assets/ajax/get_complaints.php",
+            url: "../assets/ajax/get_complaints.php",
             success: function(response) {
                 $("#complaintList").empty();
 
@@ -49,7 +54,7 @@ $(document).ready(function() {
                         }
 
                         var complaintContent = $("<div>", {
-                            "class": "fh5co-listing-item",
+                            "class": "fh5co-listing-item list-padding",
                             "css": {
                                 "background-color": backgroundColor
                             }
@@ -59,6 +64,9 @@ $(document).ready(function() {
                             }),
                             $("<p>", {
                                 "text": complaint.complaint
+                            }),
+                            $("<p>", {
+                                "text": "Date:" +complaint.date
                             }),
                         );
 
@@ -84,7 +92,7 @@ $(document).ready(function() {
                                 // AJAX kérés küldése az update_complaing.php szkriptnek
                                 $.ajax({
                                     type: "POST",
-                                    url: "../../assets/ajax/update_complaint.php",
+                                    url: "../assets/ajax/update_complaint.php",
                                     data: {
                                         status: status,
                                         complaint_id: complaintId

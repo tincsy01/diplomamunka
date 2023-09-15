@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/admin/ajax/get_organizations.php",
+        url: "../admin/ajax/get_organizations.php",
         method: "GET",
         dataType: "json"
     }).done(function(data) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
     });
     // AJAX kérés a városok lekérdezéséhez és hozzáadásához
     $.ajax({
-        url: "/admin/ajax/get_cities_org.php", // Módosítsd a valós elérési útvonalra
+        url: "../admin/ajax/get_cities_org.php", // Módosítsd a valós elérési útvonalra
         method: "GET",
         dataType: "json",
         success: function(data) {
@@ -85,7 +85,7 @@ $(document).ready(function() {
         formData.append("description", description);
 
         $.ajax({
-            url: "/admin/ajax/insert_new_org.php",
+            url: "../admin/ajax/insert_new_org.php",
             method: "POST",
             data: formData,
             contentType: false,
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
         // AJAX kérés az adatok frissítéséhez
         $.ajax({
-            url: "/admin/ajax/update_organization.php",
+            url: "../admin/ajax/update_organization.php",
             method: "POST",
             data: {
                 orgId: orgId,
@@ -183,7 +183,7 @@ $(document).ready(function() {
         $("#confirmDeleteBtn").click(function () {
             // AJAX hívás
             $.ajax({
-                url: "/admin/ajax/delete_organization.php",
+                url: "../admin/ajax/delete_organization.php",
                 method: "POST",
                 data: {
                     org_id: orgId

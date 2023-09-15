@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/admin/ajax/get_cities.php",
+        url: "../admin/ajax/get_cities.php",
         method: "GET",
         dataType: "json"
     }).done(function(data) {
@@ -28,13 +28,16 @@ $(document).ready(function() {
 
     // Add City gombra kattintás eseménykezelő
     $("#addCityBtn").click(function () {
-        // Új város adatainak begyűjtése
         var cityName = $("#cityName").val();
-        var longitude = $("#longitude").val();
-        var lattitude = $("#lattitude").val();
+        var longitude = parseFloat($("#longitude").val());
+        var lattitude = parseFloat($("#lattitude").val());
         var image = $("#image")[0].files[0];
 
-        // AJAX hívás az adatok továbbításához
+        if (!cityName || isNaN(longitude) || isNaN(lattitude) || !image) {
+            alert('Fill in all fields and ensure longitude and lattitude are numbers.');
+            return;
+        }
+
         var formData = new FormData();
         formData.append("cityName", cityName);
         formData.append("longitude", longitude);
@@ -42,7 +45,7 @@ $(document).ready(function() {
         formData.append("image", image);
 
         $.ajax({
-            url: "/admin/ajax/insert_new_city.php",
+            url: "../admin/ajax/insert_new_city.php",
             method: "POST",
             data: formData,
             contentType: false,
@@ -50,25 +53,20 @@ $(document).ready(function() {
             dataType: "json",
             success: function (response) {
                 if (response.success) {
-                    // Sikeres válasz esetén végrehajtandó tevékenységek
                     alert(response.message);
                     window.location.reload();
                 } else {
-                    // Sikertelen válasz esetén végrehajtandó tevékenységek
                     alert(response.error);
                 }
             },
             error: function (xhr, status, error) {
-                // Hiba esetén végrehajtandó tevékenységek
                 console.log("AJAX Error:", error);
             }
         });
 
-        // Modal ablak bezárása
         $("#newCityModal").modal("hide");
     });
 
-    // Update City gombra kattintás eseménykezelő
     $(document).on("click", ".updateBtn", function () {
         var cityId = $(this).data("city-id");
         var cityName = $(this).data("city-name");
@@ -89,25 +87,21 @@ $(document).ready(function() {
         var updatedLongitude = $("#updateLongitude").val();
         var updatedLattitude = $("#updateLattitude").val();
 
-        // AJAX kérés az adatok frissítéséhez
         $.ajax({
-            url: "/admin/ajax/update_city.php",
+            url: "../admin/ajax/update_city.php",
             method: "POST",
             data: {
                 cityId: cityId,
                 updatedCityName: updatedCityName,
                 updatedLongitude: updatedLongitude,
                 updatedLattitude: updatedLattitude
-                // További frissítendő adatok hozzáadása
             },
             dataType: "json",
             success: function (response) {
                 if (response.success) {
-                    // Sikeres válasz esetén végrehajtandó tevékenységek
                     alert(response.message);
                     window.location.reload();
                 } else {
-                    // Sikertelen válasz esetén végrehajtandó tevékenységek
                     alert(response.error);
                 }
             },
@@ -134,7 +128,7 @@ $(document).ready(function() {
         $("#confirmDeleteBtn").click(function () {
             // AJAX hívás
             $.ajax({
-                url: "/admin/ajax/delete_city.php",
+                url: "../admin/ajax/delete_city.php",
                 method: "POST",
                 data: {
                     city_id: cityId

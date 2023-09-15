@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/admin/ajax/get_users_statistics.php",
+        url: "../admin/ajax/get_users_statistics.php",
         method: "GET",
         dataType: "json"
     }).done(function(data) {
@@ -36,7 +36,7 @@ $(document).ready(function() {
         var discount = $("#discount").val();
 
         $.ajax({
-            url: "/admin/ajax/insert_new_coupon.php",
+            url: "../admin/ajax/insert_new_coupon.php",
             method: "POST",
             data: {
                 userId: userId,

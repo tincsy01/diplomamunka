@@ -4,7 +4,6 @@ require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-//var_dump($_SESSION);die();
 if (isset($_POST['visitors'])) {
     $visitors = $_POST['visitors'];
     $attraction_id = $_SESSION['working_at'];
@@ -43,3 +42,6 @@ else{
     $response = array('success' => false, 'message' => 'Visitors is empty');
     echo json_encode($response);
 }
+
+
+

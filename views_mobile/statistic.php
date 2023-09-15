@@ -49,8 +49,9 @@
                     <span class="title">Statistics</span>
                     <!-- Select mező a kiválasztáshoz -->
                     <select id="chartType" class="form-control">
-                        <option value="months">Months</option>
                         <option value="days">Days</option>
+                        <option value="months">Months</option>
+
                     </select>
                     <!-- A diagram tartalmi része -->
                     <canvas id="myChart"></canvas>

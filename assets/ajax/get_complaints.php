@@ -6,7 +6,7 @@ require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 $attraction_id = $_SESSION['working_at'];
-$sql = "SELECT * FROM complaints  WHERE attraction_id = :attraction_id";
+$sql = "SELECT * FROM complaints  WHERE attraction_id = :attraction_id ORDER BY date DESC";
 $query = $pdo->prepare($sql);
 $query->bindParam(':attraction_id', $attraction_id, PDO::PARAM_INT);
 $query->execute();

@@ -14,9 +14,9 @@ if(!existsEmail($email)){
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':code', $code, PDO::PARAM_STR);
     $query->bindParam(':permission', $permission, PDO::PARAM_STR);
-    sendRequestWorker($email, $code);
     $response = array('success' => true, 'message' => 'Successfully added');
     echo json_encode($response);
+    sendRequestWorker($email, $code);
 }
 else{
     $response = array('success' => true, 'message' => 'This email is already exists');

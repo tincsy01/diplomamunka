@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "/admin/ajax/get_categories.php",
+        url: "../admin/ajax/get_categories.php",
         method: "GET",
         dataType: "json"
     }).done(function(data) {
@@ -34,7 +34,7 @@ $(document).ready(function() {
         formData.append("category", category);
 
         $.ajax({
-            url: "/admin/ajax/insert_new_category.php",
+            url: "../admin/ajax/insert_new_category.php",
             method: "POST",
             data: formData,
             contentType: false,
@@ -68,7 +68,7 @@ $(document).ready(function() {
         $("#confirmDeleteBtn").click(function () {
             // AJAX hívás
             $.ajax({
-                url: "/admin/ajax/delete_category.php",
+                url: "../admin/ajax/delete_category.php",
                 method: "POST",
                 data: {
                     category_id: categoryId

@@ -18,7 +18,7 @@ function getCategories() {
             });
         },
         error: function() {
-            alert('Hiba történt a városok lekérése során.');
+            alert('Error.');
         }
     });
 }
@@ -28,15 +28,14 @@ $(document).ready(function() {
 
         var attractionName = $('#attraction').val();
         var category = $('#category').val();
-        var longitude = $('#longitude').val();
-        var latitude = $('#lattitude').val();
+        var longitude = parseFloat($('#longitude').val());
+        var latitude = parseFloat($('#lattitude').val());
         var address = $('#address').val();
         var description = $('#description').val();
         var photo = $('#photo')[0].files[0];
 
-        // Ellenőrizd, hogy minden mező ki van-e töltve
-        if (!attractionName || !category || !longitude || !latitude || !address || !description || !photo) {
-            alert('Fill in all fields');
+        if (!attractionName || !category || !longitude || isNaN(longitude) || !latitude || isNaN(latitude) || !address || !description || !photo) {
+            alert('Fill in all fields and ensure latitude and longitude are numbers.');
             return;
         }
 

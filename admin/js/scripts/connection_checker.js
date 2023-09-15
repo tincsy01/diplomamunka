@@ -2,7 +2,6 @@ function checkInternetConnectionAndRedirect() {
     if (navigator.onLine) {
         console.log("Az internetkapcsolat működik.");
         clearInterval(interval);
-        window.location.href = "./users.php";
     } else {
         console.log("Az internetkapcsolat nincs aktív.");
         clearInterval(interval);

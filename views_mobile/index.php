@@ -58,7 +58,6 @@
                                     <button type="button" class="btn btn-success" id="plus-btn">+</button>
                                 </span>
                             </div>
-
                         </div>
                         <div class="group">
                             <textarea placeholder="‎"  name="description" id="description" cols="10" rows="10"></textarea>
@@ -68,16 +67,13 @@
                     </form>
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background_visitoradd.jpg);">
-
-            </div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background_visitoradd.jpg);"></div>
         </div>
         <?php
         require_once '../assets/php/includes/footer.php';
         ?>
     </div>
 </div>
-
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.easing.1.3.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
