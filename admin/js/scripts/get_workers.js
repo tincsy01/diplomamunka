@@ -8,8 +8,8 @@ $(document).ready(function() {
         table.clear().draw();
 
         $.each(data, function (index, value) {
-            var updateBtn = '<button class="btn btn-primary btn-sm updateBtn" data-city-id="' + value.city_id + '" data-city-name="' + value.city_name + '" data-longitude="' + value.longitude + '" data-lattitude="' + value.lattitude + '">Update</button>';
-            var deleteBtn = '<button class="btn btn-danger btn-sm deleteBtn" data-city-id="' + value.city_id + '" data-city-name="' + value.city_name + '">Delete</button>';
+            var updateBtn = '<button class="btn btn-primary btn-sm updateBtn" data-user-id="' + value.user_id + '" data-name="' + value.name + '" data-permission="' + value.permission + '" data-email="' + value.email + '">Update</button>';
+            var deleteBtn = '<button class="btn btn-danger btn-sm deleteBtn" data-user-id="' + value.user_id + '">Delete</button>';
 
             table.row.add([
                 value.name,
@@ -54,7 +54,95 @@ $(document).ready(function() {
                 console.log("AJAX Error:", error);
             }
         });
-
         $("#newWorkerModal").modal("hide");
     });
+    $(document).on("click", ".updateBtn", function () {
+        var userId = $(this).data("user-id");
+        var name = $(this).data("name");
+        var email = $(this).data("email");
+        var permission = $(this).data("permission");
+
+        $("#updateUserId").val(userId); // Corrected ID selector
+        $("#updateName").val(name);
+        $("#updateEmail").val(email);
+        $("#updatePermission").val(permission);
+
+        $("#updateWorkerModal").modal("show");
+    });
+
+    // Update User gombra kattintás eseménykezelő
+    $("#updateWorkerBtn").click(function () {
+        var userId = $("#updateUserId").val(); // Corrected ID selector
+        var updatedName = $("#updateName").val();
+        var updatedEmail = $("#updateEmail").val();
+        var updatedPermission = $("#updatePermission").val();
+        var updatedActive = $("#updateActive").val();
+
+        $.ajax({
+            url: "../admin/ajax/update_user.php",
+            method: "POST",
+            data: {
+                userId: userId,
+                updatedName: updatedName,
+                updatedEmail: updatedEmail,
+                updatedPermission: updatedPermission,
+                updatedActive: updatedActive
+            },
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    // Sikeres válasz esetén végrehajtandó tevékenységek
+                    alert(response.message);
+                    window.location.reload();
+                } else {
+                    // Sikertelen válasz esetén végrehajtandó tevékenységek
+                    alert(response.error);
+                }
+            },
+            error: function (xhr, status, error) {
+                // Hiba esetén végrehajtandó tevékenységek
+                console.log("AJAX Error:", error);
+            }
+        });
+
+        // Modal ablak bezárása
+        $("#updateWorkerModal").modal("hide");
+    });
+    $(document).on("click", ".deleteBtn", function() {
+        var userId = $(this).data("user-id");
+
+        // Megerősítő ablakhoz tartozó modal megjelenítése
+        $("#deleteUserModal").modal("show");
+
+        // Az üzenet visszaigazolásának gombra kattintás eseménykezelő
+        $("#confirmDeleteBtn").click(function () {
+            // AJAX hívás
+            $.ajax({
+                url: "../admin/ajax/delete_user.php",
+                method: "POST",
+                data: {
+                    user_id: userId
+                },
+                dataType: "json",
+                success: function (response) {
+                    if (response.success) {
+                        // Sikeres válasz esetén végrehajtandó tevékenységek
+                        alert(response.message);
+                        window.location.reload();
+                    } else {
+                        // Sikertelen válasz esetén végrehajtandó tevékenységek
+                        alert(response.error);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Hiba esetén végrehajtandó tevékenységek
+                    console.log("AJAX Error:", error);
+                }
+            });
+
+            // Modal ablak bezárása
+            $("#deleteUserModal").modal("hide");
+        });
+    });
+
 });

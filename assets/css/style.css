@@ -213,6 +213,7 @@ figure {
   padding-right: 10px;
   margin-bottom: 20px;
   position: relative;
+  height: 300px;
 }
 .fh5co-listing .fh5co-item-wrap .fh5co-listing-item {
   background: #fff;
@@ -1257,7 +1258,7 @@ tbody {
   transform: translate(-50%, -50%);
   /*width: 350px;*/
   /*height: 160px;*/
-  /*background: #f7f9f9;*/
+  background: #f7f9f9;
   padding: 10px;
   border-radius: 16px;
   display: flex;
@@ -1648,4 +1649,20 @@ tbody {
 .comment-date {
   color: #777;
   font-size: 12px;
+}
+.cityImage{
+  width: 500px;
+  border-radius: 5px;
+  margin: 10px;
+}
+@media (max-width: 992px) {
+  .cityImage {
+    width: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .cityImage {
+    width: 300px;
+
+  }
 }

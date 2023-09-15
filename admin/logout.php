@@ -1,4 +1,6 @@
 <?php
 session_start();
+$_SESSION = [];
 session_unset();
-header("Location: ../../views_website/index.php");
+session_destroy();
+header("Location: ../views_website/index.php");

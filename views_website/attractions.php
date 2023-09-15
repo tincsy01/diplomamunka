@@ -28,11 +28,10 @@
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>-->
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
+
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -46,9 +45,9 @@
             <div class="fh5co-overlay"></div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
                 <div class="desc animate-box">
-                    <h2>Travel Around The World.</h2>
-                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>
-                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>
+                    <h2>Edit your attractions!</h2>
+<!--                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>-->
+<!--                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>-->
                 </div>
             </div>
         </div>

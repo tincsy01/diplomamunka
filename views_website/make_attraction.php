@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Make Attraction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -32,6 +32,7 @@
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/make_attraction.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">

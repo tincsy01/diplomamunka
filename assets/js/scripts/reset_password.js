@@ -17,8 +17,9 @@ $(document).ready(function() {
                 success: function(response) {
                     var jsonResponse = JSON.parse(response);
                     if (jsonResponse.success) {
-                        alert(jsonResponse.message);
                         window.location.reload();
+                        alert(jsonResponse.message);
+
                     } else {
                         alert(jsonResponse.message);
                     }

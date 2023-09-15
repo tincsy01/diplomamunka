@@ -36,14 +36,14 @@ $query->bindParam(':active', $active, PDO::PARAM_INT);
 $query->bindParam(':code', $code, PDO::PARAM_STR);
 $query->execute();
 
-//$messageBody = "You have a coupon code: " . $code . " with " . $discount . "% discount";
-//
-//$client->messages->create(
-//    '+381606561706',
-//    [
-//        'from' => '+16185529204',
-//        'body' => $messageBody
-//    ]
-//);
+$messageBody = "You have a coupon code: " . $code . " with " . $discount . "% discount";
+
+$client->messages->create(
+    '+381606561706',
+    [
+        'from' => '+16185529204',
+        'body' => $messageBody
+    ]
+);
 $response = array('success' => true, 'message' => 'Successfully added');
 echo json_encode($response);

@@ -3,8 +3,8 @@ require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
+var_dump($_POST);die();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ellenőrizzük, hogy a szükséges adatokat elküldték-e
     if (isset($_POST['newPassword']) AND isset($_POST['code'])) {
         $code = $_POST['code'];
         $newPassword = $_POST['newPassword'];

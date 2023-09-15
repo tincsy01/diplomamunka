@@ -20,6 +20,6 @@ document.getElementById('login-form').addEventListener('submit', function (event
     };
 
     // Elküldjük a "code" és a jelszó mező értékét
-    const data = `code=${code}&newPassword=${newPassword}`;
+    const data = `code=${encodeURIComponent(code)}&newPassword=${encodeURIComponent(newPassword)}`;
     xhr.send(data);
 });

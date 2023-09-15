@@ -32,6 +32,8 @@
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/get_cities_cities.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
+
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -44,11 +46,9 @@
         <div class="fh5co-hero">
             <div class="fh5co-overlay"></div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
-<!--                <div class="desc animate-box">-->
-<!--                    <h2>Travel Around The World.</h2>-->
-<!--                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>-->
-<!--                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>-->
-<!--                </div>-->
+                <div class="desc animate-box">
+                    <h2>List of cities.</h2>
+                </div>
             </div>
         </div>
         <div class="fh5co-listing">

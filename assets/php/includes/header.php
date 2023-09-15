@@ -47,6 +47,7 @@ session_start();
             <nav id="fh5co-menu-wrap" role="navigation">
                 <ul class="sf-menu" id="fh5co-primary-menu">
                     <?php
+//                    if(isset($_SESSION['permission']) && $_SESSION['permission'] != 1){
                     if(isset($_SESSION['permission'])){
                         switch ($_SESSION['permission']){
                             case 2:

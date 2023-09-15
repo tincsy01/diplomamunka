@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Kiolvassuk a 'code' értékét a URL-ből
     var urlParams = new URLSearchParams(window.location.search);
     var code = urlParams.get('code');
-console.log(code);
+    console.log(code);
+
     if (code) {
-        // Elküldjük a kódot az 'active.php'-ra AJAX segítségével
         $.ajax({
             url: '../assets/ajax/active.php',
             method: 'GET',
             data: { code: code },
-            dataType: 'html',
+            dataType: 'json',
             success: function(response) {
-                $('.card__title').html(response);
+                var cardTitle = $('.cardWelcome .card__title');
+                var messageSpan = $('<span>' + response.message + '</span>');
+                cardTitle.html(messageSpan);
             },
             error: function(xhr, status, error) {
                 console.error('AJAX hiba:', error);

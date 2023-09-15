@@ -159,8 +159,8 @@ function sendResetPassword($email, $code)
                         </head>
                         <body>
                             <div class='container'>
-                                <img src='../../../assets/logo-black.png' alt='Logo'>
-                                <h1>Welcome in Our Team</h1>
+                                <img src='../../assets/logo-black.png' alt='Logo'>
+                                <h1>Reset your password</h1>
                                 <p>To Reset, <a class='button' href='$activationLink'>click here</a>.</p>
                             </div>
                         </body>

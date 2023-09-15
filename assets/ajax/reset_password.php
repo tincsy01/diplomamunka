@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($row_count > 0) {
                 sendResetPassword($email, $code);
-                $response = array("success" => true, "message" => "Az e-mail cím érvényes.");
+                $response = array("success" => true, "message" => "The email address is valid.");
                 echo json_encode($response);
                 $sql2 = "UPDATE users SET code = :code WHERE email = :email";
                 $query = $pdo->prepare($sql2);
@@ -29,20 +29,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $query->bindParam(':code', $code, PDO::PARAM_STR);
                 $query->execute();
             } else {
-                $response = array("success" => false, "message" => "Nincs ilyen emailel rendelkezo felhasznalo");
+                $response = array("success" => false, "message" => "There is no user with this email");
                 echo json_encode($response);
             }
         } else {
 
-            $response = array("success" => false, "message" => "Hibás e-mail cím formátum.");
+            $response = array("success" => false, "message" => "Incorrect email address format.");
             echo json_encode($response);
         }
     } else {
-        $response = array("success" => false, "message" => "Az 'email' mező hiányzik a kérésből.");
+        $response = array("success" => false, "message" => "The 'email' field is missing from the request.");
         echo json_encode($response);
     }
 } else {
-    $response = array("success" => false, "message" => "Érvénytelen kérési mód.");
+    $response = array("success" => false, "message" => "Invalid request method.");
     echo json_encode($response);
 }
 

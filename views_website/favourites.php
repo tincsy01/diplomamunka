@@ -36,6 +36,8 @@
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/get_favourites.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
+
 </head>
 <body>
 <div id="fh5co-wrapper">

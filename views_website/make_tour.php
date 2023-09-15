@@ -33,8 +33,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
     <script src="../assets/js/scripts/make_tour.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
+
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -84,9 +85,6 @@
                                             <li><a href="./attractions.php" target="_blank">My attractions</a></li>
                                         </ul>
                                     </li>';
-//                                echo'<li>
-//                                        <a href="#">Statistics</a>
-//                                    </li>';1
                                             echo'<li>
                                         <a href="./logout.php">Log out</a>
                                     </li>';
@@ -123,7 +121,6 @@
                                 <a href="./login.php">Login</a>
                             </li>';
                                 }
-
                                 ?>
                             </ul>
                         </nav>
@@ -134,7 +131,7 @@
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
 
-                <div class="card">
+                <div class="card user-logged-in">
                     <span class="title">Make your tour</span>
                     <form class="form" id="login-form">
                         <div class="group">
@@ -160,7 +157,11 @@
                         <button type="submit">Submit</button>
                     </form>
                 </div>
+                <div class="card logout" style="display: none">
+                    <span class="title">If you want to create a tour, log in</span>
+                </div>
             </div>
+
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
 
             </div>

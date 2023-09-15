@@ -33,6 +33,7 @@
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/login.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -56,6 +57,7 @@
                             <input placeholder="‎" type="password" id="password" name="password">
                             <label for="password">Password</label>
                         </div>
+<!--                        <a href="reset_password.php" style="color: black">Forgot password</a>-->
                         <button type="submit">Submit</button>
                     </form>
                 </div>

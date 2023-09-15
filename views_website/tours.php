@@ -37,6 +37,8 @@
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/get_attraction_data.js"></script>
     <script src="../assets/js/scripts/get_tours.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
+
 </head>
 <body>
 <div id="fh5co-wrapper">

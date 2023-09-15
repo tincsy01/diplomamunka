@@ -20,19 +20,16 @@ if ($query->rowCount() > 0) {
         $data['user_id'] = (int)$row['user_id'];
         $registeredPassword = $row['password'];
         $data['permission'] = $row['permission'];
-        if ($data['permission'] == 2) {
-            // Ellenőrizd, hogy a megadott jelszó megegyezik-e a tárolt hashelt jelszóval
-            if (password_verify($password, $registeredPassword)) {
+        // Ellenőrizd, hogy a megadott jelszó megegyezik-e a tárolt hashelt jelszóval
+        if (password_verify($password, $registeredPassword)) {
+            if ($data['permission'] == 2) {
                 $_SESSION['permission'] = $row['permission'];
                 $_SESSION['user_id'] = (int)$row['user_id'];
                 $response = array('success' => true, 'message' => 'Logged in', 'url' => 'views_website/index.php');
                 echo json_encode($response);
                 exit;
             }
-        }
-        if ($data['permission'] == 4) {
-            // Ellenőrizd, hogy a megadott jelszó megegyezik-e a tárolt hashelt jelszóval
-            if (password_verify($password, $registeredPassword)) {
+            if ($data['permission'] == 4) {
                 $_SESSION['permission'] = $row['permission'];
                 $_SESSION['user_id'] = (int)$row['user_id'];
                 $_SESSION['working_at'] = (int)$row['working_at'];
@@ -41,9 +38,7 @@ if ($query->rowCount() > 0) {
                 echo json_encode($response);
                 exit;
             }
-        }
-        if ($data['permission'] == 1) {
-            if (password_verify($password, $registeredPassword)) {
+            if ($data['permission'] == 1) {
                 $_SESSION['permission'] = $row['permission'];
                 $_SESSION['user_id'] = (int)$row['user_id'];
                 $_SESSION['working_at'] = (int)$row['working_at'];
@@ -53,6 +48,7 @@ if ($query->rowCount() > 0) {
                 exit;
             }
         }
+
     }
 }
 $sql = "SELECT org_id, password, permission FROM organizations WHERE username = :username AND active = 1";

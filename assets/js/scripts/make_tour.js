@@ -94,34 +94,27 @@ function saveTour() {
             alert('Hiba történt a kommunikáció során: ' + error);
         }
     });
-    // $.ajax({
-    //     url: '../assets/ajax/insert_tour.php',
-    //     method: 'POST',
-    //     data: {
-    //         city_id: cityId,
-    //         attraction_ids: selectedAttractionIds,
-    //         date: date,
-    //         time: time
-    //     },
-    //     success: function (responseText) {
-    //         try {
-    //             var response = JSON.parse(responseText);
-    //             if (response.success) {
-    //                 alert(response.message);
-    //                 window.location.reload();
-    //             } else {
-    //                 alert('Hiba: ' + response.message);
-    //             }
-    //         } catch (error) {
-    //             alert('Hiba: Nem sikerült feldolgozni a választ.');
-    //         }
-    //     },
-    //     error: function () {
-    //         alert('Hiba: Nem sikerült kommunikálni a szerverrel.');
-    //     }
-    // });
 }
+function checkLoginStatus() {
+    $.ajax({
+        url: '../assets/ajax/get_login.php',
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response === true) {
+                $('.user-logged-in').show();
+            } else {
+                $('.user-logged-in').hide();
+                $('.logout').show();
 
+            }
+        },
+        error: function() {
+            alert('Error while checking login status.');
+        }
+    });
+}
+checkLoginStatus();
 $(document).ready(function () {
     getCities();
     $('#login-form').submit(function (event) {

@@ -106,37 +106,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <form id="newWorkerForm">
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="name">Name</label>-->
-<!--                                            <input type="text" class="form-control" id="name" name="name" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="username">Username</label>-->
-<!--                                            <input type="text" class="form-control" id="username" name="username" required>-->
-<!--                                        </div>-->
                                         <div class="form-group">
                                             <label for="email">Email</label>
                                             <input type="email" class="form-control" id="email" name="email" required>
                                         </div>
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="password">Password</label>-->
-<!--                                            <input type="password" class="form-control" id="password" name="password" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="address">Address</label>-->
-<!--                                            <input type="text" class="form-control" id="address" name="address" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="phone">Phone</label>-->
-<!--                                            <input type="text" class="form-control" id="phone" name="phone" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="phone">Working at</label>-->
-<!--                                            <select name="working" id="working">-->
-<!--                                                <option value=""></option>-->
-<!--                                            </select>-->
-<!--                                        </div>-->
-                                        <!-- További mezők a város hozzáadásához -->
                                     </form>
                                 </div>
                                 <div class="modal-footer">
@@ -146,60 +119,69 @@
                             </div>
                         </div>
                     </div>
-<!--                    <div class="modal fade" id="updateCityModal" tabindex="-1" role="dialog" aria-labelledby="updateCityModalLabel" aria-hidden="true">-->
-<!--                        <div class="modal-dialog" role="document">-->
-<!--                            <div class="modal-content">-->
-<!--                                <div class="modal-header">-->
-<!--                                    <h5 class="modal-title" id="updateCityModalLabel">Update City</h5>-->
-<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                                        <span aria-hidden="true">&times;</span>-->
-<!--                                    </button>-->
-<!--                                </div>-->
-<!--                                <div class="modal-body">-->
-<!--                                    <form id="updateCityForm">-->
-<!--                                        <input type="hidden" id="updateCityId" name="cityId">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="updateCityName">City Name</label>-->
-<!--                                            <input type="text" class="form-control" id="updateCityName" name="cityName" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="longitude">Longitude</label>-->
-<!--                                            <input type="text" class="form-control" id="updateLongitude" name="longitude" required>-->
-<!--                                        </div>-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="lattitude">Lattitude</label>-->
-<!--                                            <input type="text" class="form-control" id="updateLattitude" name="lattitude" required>-->
-<!--                                        </div>-->
-<!--                                    </form>-->
-<!--                                </div>-->
-<!--                                <div class="modal-footer">-->
-<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                                    <button type="button" id="updateCityBtn" class="btn btn-primary">Update City</button>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="modal fade" id="deleteCityModal" tabindex="-1" role="dialog" aria-labelledby="deleteCityModalLabel" aria-hidden="true">-->
-<!--                        <div class="modal-dialog" role="document">-->
-<!--                            <div class="modal-content">-->
-<!--                                <div class="modal-header">-->
-<!--                                    <h5 class="modal-title" id="deleteCityModalLabel">Delete City</h5>-->
-<!--                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                                        <span aria-hidden="true">&times;</span>-->
-<!--                                    </button>-->
-<!--                                </div>-->
-<!--                                <div class="modal-body">-->
-<!--                                    Are you sure you want to delete the city <span id="cityNameToDelete"></span>?-->
-<!--                                </div>-->
-<!--                                <div class="modal-footer">-->
-<!--                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>-->
-<!--                                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-
+                    <div class="modal fade" id="updateWorkerModal" tabindex="-1" role="dialog" aria-labelledby="updateWorkerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updateWorkerModalLabel">Update Worker</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="updateWorkerForm">
+                                        <input type="hidden" id="updateUserId" name="userId">
+                                        <div class="form-group">
+                                            <label for="updateName">Name</label>
+                                            <input type="text" class="form-control" id="updateName" name="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateEmail">Email</label>
+                                            <input type="text" class="form-control" id="updateEmail" name="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updatePermission">Permission</label>
+                                            <select name="permission" id="updatePermission">
+                                                <option value="1">Admin</option>
+                                                <option value="2">User</option>
+                                                <option value="4">Worker</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateActive">Banned</label>
+                                            <select name="active" id="updateActive">
+                                                <option value="1">Active</option>
+                                                <option value="0">Banned</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" id="updateWorkerBtn" class="btn btn-primary">Update Worker</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteUserModalLabel">Delete User</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this user?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
