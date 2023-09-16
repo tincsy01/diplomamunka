@@ -17,7 +17,7 @@ $(document).ready(function() {
                         var cardAttractionDiv = $('<div class="cardAttraction"></div>');
                         var cardContent = $('<div class="cardContent"></div>');
 
-                        var image = $('<img src="/assets/images/attractions/' + favorite.image + '" alt="' + favorite.name + '" class="col-lg-4 col-sm-4 col-xs-8">');
+                        var image = $('<img src="../assets/images/attractions/' + favorite.image + '" alt="' + favorite.name + '" class="col-lg-4 col-sm-4 col-xs-8">');
                         var nameLink = $('<a class="black-link" href="attraction.php?attraction_id=' + favorite.attraction_id + '">' + favorite.name + '</a>');
 
                         cardContent.append(image);

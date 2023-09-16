@@ -1055,7 +1055,7 @@ figure {
   border-radius: 10px;
   padding: 20px;
   /*width: 350px;*/
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -1327,12 +1327,69 @@ tbody {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+  max-height: 500px;
   width: 600px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 150px;
+  overflow-y: auto;
 }
+
+@media (max-width: 992px) {
+  .cardAttraction {
+    width: 400px;
+  }
+}
+
+/* Media Query a kisebb kijelzőkre (pl. mobilok) */
+@media (max-width: 768px) {
+  .cardAttraction {
+    width: 300px;
+    margin-top: 100px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}
+/*.cardAttraction {*/
+/*  background-color: #fff;*/
+/*  border-radius: 10px;*/
+/*  padding: 20px;*/
+/*  max-height: 500px;*/
+/*  width: 600px;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  margin: 0 auto;*/
+/*  margin-top: 150px;*/
+/*  overflow-y: auto;*/
+/*  !*background-color: #fff;*!*/
+/*  !*border-radius: 10px;*!*/
+/*  !*padding: 20px;*!*/
+/*  !*width: 500px;*!*/
+/*  !*max-height: 500px;*!*/
+/*  !*display: flex;*!*/
+/*  !*flex-direction: column;*!*/
+/*  !*margin: 0 auto;*!*/
+/*  !*margin-top: 150px;*!*/
+/*  !*overflow-y: auto;*!*/
+/*}*/
+/*@media (max-width: 992px) {*/
+/*  .cardAttraction {*/
+/*    width: 400px;*/
+/*    max-height: 500px;*/
+/*    overflow-y: auto;*/
+/*  }*/
+/*}*/
+
+/*!* Media Query a kisebb kijelzőkre (pl. mobilok) *!*/
+/*@media (max-width: 768px) {*/
+/*  .cardAttraction {*/
+/*    width: 300px;*/
+/*    margin-top: 100px;*/
+/*    max-height: 500px;*/
+/*    overflow-y: auto;*/
+/*  }*/
+/*}*/
 
 .cardCity {
   background-color: #fff;
