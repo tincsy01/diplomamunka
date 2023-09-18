@@ -1,10 +1,9 @@
 <?php
-// session_start();
+ session_start();
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
-require_once '../php/includes/functions.php';
+//require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
-
 $username = $_POST['username'];
 $password = $_POST['password'];
 

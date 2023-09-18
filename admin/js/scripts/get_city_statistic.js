@@ -1,6 +1,5 @@
 var chart2;
 var ctx2 = document.getElementById('cityChart2').getContext('2d');
-
 function fetchCityChartData2() {
     var url = "../admin/ajax/get_city_statistics.php";
 
@@ -57,8 +56,6 @@ function fetchCityChartData2() {
         }
     });
 }
-
-// Hívd meg a fetchCityChartData2 függvényt a lap betöltésekor
 $(document).ready(function () {
     fetchCityChartData2();
 });

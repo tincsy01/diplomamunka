@@ -24,16 +24,16 @@ session_start();
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="../../css/animate.css">
-    <link rel="stylesheet" href="../../css/icomoon.css">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <link rel="stylesheet" href="../../css/superfish.css">
-    <link rel="stylesheet" href="../../css/style.css">
+<!--    <link rel="shortcut icon" href="favicon.ico">-->
+<!--    <link rel="stylesheet" href="../../css/animate.css">-->
+<!--    <link rel="stylesheet" href="../../css/icomoon.css">-->
+<!--    <link rel="stylesheet" href="../../css/bootstrap.css">-->
+<!--    <link rel="stylesheet" href="../../css/superfish.css">-->
+<!--    <link rel="stylesheet" href="../../css/style.css">-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="../../js/modernizr-2.6.2.min.js"></script>
-    <script src="../../js/respond.min.js"></script>
+<!--    <script src="../../js/modernizr-2.6.2.min.js"></script>-->
+<!--    <script src="../../js/respond.min.js"></script>-->
 <!--    <script src="../../js/scripts/registration.js"></script>-->
 </head>
 <body>
@@ -47,7 +47,6 @@ session_start();
             <nav id="fh5co-menu-wrap" role="navigation">
                 <ul class="sf-menu" id="fh5co-primary-menu">
                     <?php
-//                    if(isset($_SESSION['permission']) && $_SESSION['permission'] != 1){
                     if(isset($_SESSION['permission'])){
                         switch ($_SESSION['permission']){
                             case 2:

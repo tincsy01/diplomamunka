@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $address = $_POST["address"];
     $description = $_POST["description"];
 
-    // Készítsd elő a lekérdezést az adatok frissítéséhez
     $sql = "UPDATE attractions SET name = '$attractionName', category_id = '$category', longitude = '$longitude', lattitude = '$lattitude', description = '$description' WHERE attraction_id = $attractionId";
 
     if ($pdo->query($sql) === TRUE) {
@@ -20,10 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $response = array("success" => false, "msg" => "Hiba történt az attrakció frissítése során: " . $pdo->error);
     }
-
     $pdo->close();
-
-    // Válasz elkészítése és visszaküldése JSON formátumban
     header("Content-Type: application/json");
     echo json_encode($response);
 }

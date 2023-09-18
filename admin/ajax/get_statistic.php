@@ -4,7 +4,6 @@ require_once '../php/config.php';
 require_once '../php/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-// Ellenőrizzük, hogy a napok vagy hónapok vannak-e kiválasztva
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["option"])) {
     $option = $_POST["option"];
     $data = array();

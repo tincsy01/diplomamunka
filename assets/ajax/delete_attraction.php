@@ -5,13 +5,12 @@ $pdo = connectDatabase($dsn, $pdoOptions);
 
 $attractionId = $_POST["attraction_id"];
 
-// Készítsd elő a lekérdezést az attrakció törléséhez
 $sql = "DELETE FROM attractions WHERE attraction_id = $attractionId";
 
 if ($pdo->query($sql) === TRUE) {
     $response = array("success" => true, "msg" => "Az attrakció sikeresen törölve.");
 } else {
-    $response = array("success" => false, "msg" => "Hiba történt az attrakció törlése során: " . $pdo->error);
+    $response = array("success" => false, "msg" => "Hiba történt az attrakció törlése során: ");
 }
 
 // Bezárjuk az adatbázis kapcsolatot

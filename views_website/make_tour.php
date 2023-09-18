@@ -45,7 +45,6 @@
                 <div class="container">
                     <div class="nav-header">
                         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-                        <!--            <h1 id="fh5co-logo"><a href="../../../views_website/index.php">TenderTours</a></h1>-->
                         <h1 id="fh5co-logo"><a href="./index.php">TenderTours</a></h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
@@ -171,13 +170,5 @@
         ?>
     </div>
 </div>
-<!--<script src="../assets/js/jquery.min.js"></script>-->
-<!--<script src="../assets/js/jquery.easing.1.3.js"></script>-->
-<!--<script src="../assets/js/bootstrap.min.js"></script>-->
-<!--<script src="../assets/js/jquery.waypoints.min.js"></script>-->
-<!--<script src="../assets/js/jquery.stellar.min.js"></script>-->
-<!--<script src="../assets/js/hoverIntent.js"></script>-->
-<!--<script src="../assets/js/superfish.js"></script>-->
-<!--<script src="../assets/js/main.js"></script>-->
 </body>
 </html>

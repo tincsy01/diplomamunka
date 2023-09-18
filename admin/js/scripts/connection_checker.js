@@ -8,6 +8,4 @@ function checkInternetConnectionAndRedirect() {
         window.location.href = "./inactive.php";
     }
 }
-
-// Az ellenőrzést másodpercenként hajtjuk végre.
 var interval = setInterval(checkInternetConnectionAndRedirect, 1000);

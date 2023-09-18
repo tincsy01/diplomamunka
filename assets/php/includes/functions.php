@@ -1,6 +1,4 @@
 <?php
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -16,11 +14,7 @@ $pdo = connectDatabase($dsn, $pdoOptions);
  *
  * @param string $url
  */
-function redirection($url)
-{
-    header("Location:$url");
-    exit();
-}
+
 
 /**
  * Kod letrehozo fuggveny

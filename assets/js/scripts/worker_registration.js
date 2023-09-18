@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $.ajax({
         url: '../assets/ajax/get_attraction_worker.php',
         method: 'GET',
@@ -19,9 +18,7 @@ $(document).ready(function() {
     });
 
     $('#registration-form').submit(function(event) {
-        event.preventDefault(); // Előnyomja az alapértelmezett oldalfrissítést
-
-        // Űrlapadatok összegyűjtése
+        event.preventDefault();
         var name = $('#name').val();
         var username = $('#username').val();
         var email = $('#email').val();
@@ -30,13 +27,10 @@ $(document).ready(function() {
         var phone = $('#phone').val();
         var workingAt = $('#workingAt').val();
 
-        // Ellenőrizd, hogy az űrlapmezők ki vannak-e töltve
         if (!name || !username || !email || !password || !address || !phone || !workingAt) {
             alert('Please fill in all fields.');
             return;
         }
-
-        // Űrlapadatok elküldése a worker_registration.php fájlnak
         var formData = $(this).serialize();
         $.ajax({
             url: '../assets/ajax/worker_registration.php',
@@ -54,26 +48,4 @@ $(document).ready(function() {
             }
         });
     });
-    // // Űrlap beküldésének kezelése
-    // $('#registration-form').submit(function(event) {
-    //     event.preventDefault(); // Előnyomja az alapértelmezett oldalfrissítést
-    //
-    //     // Űrlapadatok összegyűjtése
-    //     var formData = $(this).serialize();
-    //
-    //     // Űrlapadatok elküldése a worker_registration.php fájlnak
-    //     $.ajax({
-    //         url: '../assets/ajax/worker_registration.php',
-    //         method: 'POST',
-    //         data: formData,
-    //         dataType: 'json',
-    //         success: function(response) {
-    //             if (response.success) {
-    //                 alert(response.message);
-    //             } else {
-    //                 alert('Error: ' + response.message);
-    //             }
-    //         }
-    //     });
-    // });
 });

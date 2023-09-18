@@ -4,7 +4,6 @@ require_once '../php/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ellenőrizd, hogy a szükséges adatok érkeztek-e
     if (isset($_POST['orgId']) && isset($_POST['updatedName']) && isset($_POST['updatedPhone'])  && isset($_POST['updatedAddress']) && isset($_POST['updatedDescription'])) {
         $orgId = $_POST['orgId'];
         $updatedName = $_POST['updatedName'];
@@ -15,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updatedDescription = $_POST['updatedDescription'];
 
         try {
-            // SQL lekérdezés az adatok frissítéséhez
             $sql = "UPDATE organizations 
                     SET org_name = :updatedName, 
                         phone = :updatedPhone, 
@@ -27,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $query = $pdo->prepare($sql);
 
-            // Változók kötése a lekérdezéshez
             $query->bindParam(':orgId', $orgId, PDO::PARAM_INT);
             $query->bindParam(':updatedName', $updatedName);
             $query->bindParam(':updatedPhone', $updatedPhone);
@@ -36,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query->bindParam(':updatedAddress', $updatedAddress);
             $query->bindParam(':updatedDescription', $updatedDescription);
 
-            // Lekérdezés végrehajtása
             if ($query->execute()) {
                 $response = array('success' => true, 'message' => 'Organization updated successfully.');
             } else {

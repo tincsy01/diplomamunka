@@ -1,7 +1,7 @@
 <?php
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
-require_once '../php/includes/functions.php';
+//require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 $city_id = $_GET['city_id'];

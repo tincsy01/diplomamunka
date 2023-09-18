@@ -29,8 +29,6 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
-    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-    <!--    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>-->
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/active.js"></script>
@@ -50,15 +48,11 @@
                 <div class="cardWelcome col-lg-5 col-sm-7 col-xs-7">
                     <span class="card__title"></span>
                 </div>
-
-
             </div>
-
         </div>
         <div class="fh5co-listing">
             <div class="container">
                 <div class="row">
-
                 </div>
             </div>
         </div>
@@ -76,6 +70,5 @@
 <script src="../assets/js/superfish.js"></script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/scripts/get_attractions.js"></script>
-
 </body>
 </html>

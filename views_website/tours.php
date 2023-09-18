@@ -51,13 +51,10 @@
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
                 <div class="cardAttraction">
-
                         <div class="top-text header-text">
                             <h2>Tours archive</h2>
                         </div>
                         <div class="tours-list"></div>
-
-
                 </div>
             </div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">

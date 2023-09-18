@@ -44,12 +44,10 @@ $(document).ready(function() {
             data: { attraction_id: attractionId },
             success: function(response) {
                 if (response.visited) {
-                    // Felhasználó már volt az attrakciónál, lehetőség a komment írására
                     var commentForm = '<form id="comment-form" method="post" class="form" id="login-form">';
                     commentForm += '<textarea name="comment" placeholder="Leave a comment.." id="comment" class="form-control"></textarea>';
                     commentForm += '<input type="hidden" name="attraction_id" value="' + attractionId + '">';
 
-                    // Csillagok hozzáadása az űrlaphoz
                     commentForm += '<div class="rating">';
                     commentForm += '<input value="5" name="rate" id="star5" type="radio">';
                     commentForm += '<label title="text" for="star5"></label>';
@@ -68,22 +66,19 @@ $(document).ready(function() {
 
                     $('#comment-section').html(commentForm);
 
-                    // Az űrlap elküldése AJAX segítségével
                     $('#comment-form').submit(function(e) {
                         e.preventDefault();
 
                         var formData = $(this).serialize();
 
                         $.ajax({
-                            url: '../assets/ajax/add_comment.php', // Frissítsd az URL-t a PHP fájlnak
+                            url: '../assets/ajax/add_comment.php',
                             type: 'POST',
                             dataType: 'json',
                             data: formData,
                             success: function(response) {
                                 if (response.success) {
-                                    // Komment sikeresen elküldve, frissítsük a kommenteket
                                     getComments();
-                                    // Töröljük a mezőket vagy csinálj valami egyéb módosítást, ha szükséges
                                     $('#comment').val('');
                                     $('input[type="radio"]').prop('checked', false);
                                 } else {
@@ -96,7 +91,6 @@ $(document).ready(function() {
                         });
                     });
                 } else {
-                    // Felhasználó még nem volt az attrakciónál, nem lehet kommentet írni
                     var notVisitedMessage = '<p>You need to visit this attraction to be able to leave a comment.</p>';
 
                     $('#comment-section').html(notVisitedMessage);
@@ -107,8 +101,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Hívjuk meg a függvényeket
     getComments();
     checkVisit();
 });

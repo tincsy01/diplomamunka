@@ -1,8 +1,6 @@
 $(document).ready(function () {
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart;
-
-    // Az adatok lekérése AJAX segítségével
     function fetchChartData(option) {
         var url = "../assets/ajax/get_data_statistics.php";
         var data = { option: option };
@@ -24,10 +22,8 @@ $(document).ready(function () {
                         borderWidth: 1
                     }]
                 };
-
-                // Frissítjük a diagramot
                 if (chart) {
-                    chart.destroy(); // Megszüntetjük a korábbi diagramot, ha van
+                    chart.destroy();
                 }
                 chart = new Chart(ctx, {
                     type: 'bar',
@@ -46,13 +42,9 @@ $(document).ready(function () {
             }
         });
     }
-
-    // Az adatok lekérése a kiválasztott select érték alapján
     document.getElementById('chartType').addEventListener('change', function () {
         var selectedOption = this.value;
         fetchChartData(selectedOption);
     });
-
-    // Kezdeti adatok betöltése (alapértelmezett napok)
     fetchChartData('days');
 });

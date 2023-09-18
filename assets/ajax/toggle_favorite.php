@@ -10,15 +10,12 @@ if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Az AJAX kérés POST metódussal érkezett, tehát a kedvencekhez adás vagy eltávolítás műveletre kerül sor.
         $attraction_id = $_POST['attraction_id'];
 
         if (isFavorite($user_id, $attraction_id)) {
-            // Az adott látványosság már a kedvencek között van, így törölnünk kell azt.
             removeFromFavorites($user_id, $attraction_id);
             echo json_encode(['is_favorite' => false]);
         } else {
-            // Az adott látványosság még nincs a kedvencek között, hozzáadjuk.
             addToFavorites($user_id, $attraction_id);
             echo json_encode(['is_favorite' => true]);
         }

@@ -27,28 +27,21 @@ $(document).ready(function() {
     $("#newOrg").click(function () {
         $("#newOrgModal").modal("show");
     });
-    // AJAX kérés a városok lekérdezéséhez és hozzáadásához
     $.ajax({
-        url: "../admin/ajax/get_cities_org.php", // Módosítsd a valós elérési útvonalra
+        url: "../admin/ajax/get_cities_org.php",
         method: "GET",
         dataType: "json",
         success: function(data) {
             var citySelect = $("#city");
-
-            // Töröld az esetleges korábbi városokat
             citySelect.empty();
-
-            // Hozzáad egy alapértelmezett üres opciót
             citySelect.append($("<option>", {
                 value: "",
                 text: "Select"
             }));
-
-            // Iterálj a városokon és adj hozzá minden várost az opciókhoz
             $.each(data, function(index, city) {
                 citySelect.append($("<option>", {
-                    value: city.city_id, // A város ID-je legyen az érték
-                    text: city.city_name // A város neve legyen a megjelenített szöveg
+                    value: city.city_id,
+                    text: city.city_name
                 }));
             });
         },
@@ -56,9 +49,7 @@ $(document).ready(function() {
             console.log("Error:", err);
         }
     });
-    // Add Org gombra kattintás eseménykezelő
     $("#addOrgBtn").click(function () {
-        // Új város adatainak begyűjtése
         var orgName = $("#orgName").val();
         var email = $("#email").val();
         var city = $("#city").val();
@@ -71,9 +62,6 @@ $(document).ready(function() {
             alert("All fields must be filled in!");
             return;
         }
-
-
-        // AJAX hívás az adatok továbbításához
         var formData = new FormData();
         formData.append("orgName", orgName);
         formData.append("email", email);
@@ -93,7 +81,6 @@ $(document).ready(function() {
             dataType: "json",
             success: function (response) {
                 if (response.success) {
-                    // Sikeres válasz esetén végrehajtandó tevékenységek
                     alert(response.message);
                     window.location.reload();
                 } else {
@@ -101,12 +88,9 @@ $(document).ready(function() {
                 }
             },
             error: function (xhr, status, error) {
-                // Hiba esetén végrehajtandó tevékenységek
                 console.log("AJAX Error:", error);
             }
         });
-
-        // Modal ablak bezárása
         $("#newOrgModal").modal("hide");
     });
     $(document).on("click", ".updateBtn", function () {
@@ -137,8 +121,6 @@ $(document).ready(function() {
         var updatedActive = $("#updateActive").val();
         var updatedAddress = $("#updateAddress").val();
         var updatedDescription = $("#updateDescription").val();
-
-        // AJAX kérés az adatok frissítéséhez
         $.ajax({
             url: "../admin/ajax/update_organization.php",
             method: "POST",
@@ -150,38 +132,27 @@ $(document).ready(function() {
                 updatedActive: updatedActive,
                 updatedAddress: updatedAddress,
                 updatedDescription: updatedDescription
-                // További frissítendő adatok hozzáadása
             },
             dataType: "json",
             success: function (response) {
                 if (response.success) {
-                    // Sikeres válasz esetén végrehajtandó tevékenységek
                     alert(response.message);
                     window.location.reload();
                 } else {
-                    // Sikertelen válasz esetén végrehajtandó tevékenységek
                     alert(response.error);
                 }
             },
             error: function (xhr, status, error) {
-                // Hiba esetén végrehajtandó tevékenységek
                 console.log("AJAX Error:", error);
             }
         });
-
-        // Modal ablak bezárása
         $("#updateOrgModal").modal("hide");
     });
 
     $(document).on("click", ".deleteBtn", function() {
         var orgId = $(this).data("org-id");
-
-
         $("#deleteOrgModal").modal("show");
-
-        // Az üzenet visszaigazolásának gombra kattintás eseménykezelő
         $("#confirmDeleteBtn").click(function () {
-            // AJAX hívás
             $.ajax({
                 url: "../admin/ajax/delete_organization.php",
                 method: "POST",
@@ -194,17 +165,13 @@ $(document).ready(function() {
                         alert(response.message);
                         window.location.reload();
                     } else {
-                        // Sikertelen válasz esetén végrehajtandó tevékenységek
                         alert(response.error);
                     }
                 },
                 error: function (xhr, status, error) {
-                    // Hiba esetén végrehajtandó tevékenységek
                     console.log("AJAX Error:", error);
                 }
             });
-
-            // Modal ablak bezárása
             $("#deleteOrgModal").modal("hide");
         });
     });

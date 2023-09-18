@@ -86,10 +86,7 @@ $(document).ready(function() {
                             var complaintId = $(this).data("complaint-id");
                             $("#updateComplaintModal").modal("show");
                             $("#saveComplaintButton").click(function() {
-                                // A status érték és a complaint_id lekérése
                                 var status = $("#statusUpdate").val();
-
-                                // AJAX kérés küldése az update_complaing.php szkriptnek
                                 $.ajax({
                                     type: "POST",
                                     url: "../assets/ajax/update_complaint.php",
@@ -104,8 +101,6 @@ $(document).ready(function() {
                                         alert("Error updating complaint.");
                                     }
                                 });
-
-                                // Bezárjuk a modal-t
                                 $("#updateComplaintModal").modal("hide");
                             });
                         });

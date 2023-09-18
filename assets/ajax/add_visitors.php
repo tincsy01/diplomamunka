@@ -3,7 +3,6 @@ session_start();
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
-
 if (isset($_POST['visitors'])) {
     $visitors = $_POST['visitors'];
     $attraction_id = $_SESSION['working_at'];
@@ -34,7 +33,6 @@ if (isset($_POST['visitors'])) {
         $query->bindParam(':lastId', $lastId, PDO::PARAM_INT);
         $query->execute();
     }
-
     $response = array('success' => true, 'message' => 'Added');
     echo json_encode($response);
 }

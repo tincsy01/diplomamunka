@@ -40,7 +40,7 @@ $messageBody = "You have a coupon code: " . $code . " with " . $discount . "% di
 
 try {
     $client->messages->create(
-        '+381606561706', // Céltelefonszám
+        '+381606561706',
         [
             'from' => '+16185529204', // Twilio telefonszám
             'body' => $messageBody
@@ -54,12 +54,3 @@ try {
     $response = array('success' => false, 'message' => 'Twilio error: ' . $e->getMessage());
     echo json_encode($response);
 }
-//$client->messages->create(
-//    '+381606561706',
-//    [
-//        'from' => '+16185529204',
-//        'body' => $messageBody
-//    ]
-//);
-//$response = array('success' => true, 'message' => 'Successfully added');
-//echo json_encode($response);

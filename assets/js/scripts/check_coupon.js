@@ -1,21 +1,18 @@
 $(document).ready(function() {
-
     $("#login-form").submit(function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
-
-        // Get the coupon code from the input field
+        e.preventDefault();
         var couponCode = $("#code").val();
         $.ajax({
             type: "POST",
             url: "../assets/ajax/check_coupon.php",
             data: { code: couponCode },
             success: function(response) {
-                var jsonResponse = JSON.parse(response); // A JSON választ parse-oljuk
+                var jsonResponse = JSON.parse(response);
                 if (jsonResponse.success) {
                     alert(jsonResponse.message);
                     window.location.reload();
                 } else {
-                    alert(jsonResponse.message); // Kiírjuk az üzenetet
+                    alert(jsonResponse.message);
                 }
             },
             error: function() {

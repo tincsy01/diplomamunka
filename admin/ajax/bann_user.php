@@ -7,8 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["userId"])) {
         try {
             $userId = $_POST["userId"];
-
-            // SQL lekérdezés a város frissítéséhez
             $sql = "UPDATE users SET active = :, longitude = :longitude, lattitude = :lattitude WHERE city_id = :city_id";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':updated_city_name', $updatedCityName, PDO::PARAM_STR);
@@ -20,17 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $response = array("success" => true, "message" => "City updated successfully.");
             echo json_encode($response);
         } catch (PDOException $e) {
-            // Hiba esetén válasz küldése
             $response = array("success" => false, "error" => "Error updating city: " . $e->getMessage());
             echo json_encode($response);
         }
     } else {
-        // Hiányzó adatok esetén válasz küldése
         $response = array("success" => false, "error" => "Missing data.");
         echo json_encode($response);
     }
 } else {
-    // Nem megfelelő kérés metódus esetén válasz küldése
     $response = array("success" => false, "error" => "Invalid request method.");
     echo json_encode($response);
 }

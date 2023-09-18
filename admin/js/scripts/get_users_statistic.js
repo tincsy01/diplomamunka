@@ -29,12 +29,10 @@ $(document).ready(function() {
         $("#phone").val(phone);
         $("#newCouponModal").modal("show");
     });
-
     $("#addCouponBtn").click(function () {
         var userId = $("#userId").val();
         var phone = $("#phone").val();
         var discount = $("#discount").val();
-
         $.ajax({
             url: "../admin/ajax/insert_new_coupon.php",
             method: "POST",
@@ -56,7 +54,6 @@ $(document).ready(function() {
                 console.log("AJAX Error:", error);
             }
         });
-
         $("#newCouponModal").modal("hide");
     });
 });

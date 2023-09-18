@@ -8,7 +8,6 @@ $(document).ready(function () {
         data: { city_id: cityId },
         dataType: 'json',
         success: function (data) {
-            // Városi adatok megjelenítése
             var cityDataDiv = $('.cityData');
             var cityDataHtml = '<div class="row">';
             cityDataHtml += '<div class="col-lg-10 col-sm-10 col-xs-10">';
@@ -25,22 +24,17 @@ $(document).ready(function () {
             cityDataDiv.html(cityDataHtml);
 
             if (data.longitude && data.lattitude) {
-                // Térkép inicializálása
                 var center = { lat: parseFloat(data.lattitude), lng: parseFloat(data.longitude) };
                 var map = new google.maps.Map(document.getElementById('tourMap'), {
                     center: center,
                     zoom: 8
                 });
-
-                // Város megjelenítése a térképen
                 var marker = new google.maps.Marker({
                     position: center,
                     map: map,
                     title: data.city_name
                 });
             }
-
-            // Látványosságok listázása
             if (data.attractions.length > 0) {
                 var attractionsDiv = $('#attractions');
                 for (var i = 0; i < data.attractions.length; i++) {

@@ -25,8 +25,6 @@ $(document).ready(function() {
     $("#newCity").click(function () {
         $("#newCityModal").modal("show");
     });
-
-    // Add City gombra kattintás eseménykezelő
     $("#addCityBtn").click(function () {
         var cityName = $("#cityName").val();
         var longitude = parseFloat($("#longitude").val());
@@ -106,27 +104,17 @@ $(document).ready(function() {
                 }
             },
             error: function (xhr, status, error) {
-                // Hiba esetén végrehajtandó tevékenységek
                 console.log("AJAX Error:", error);
             }
         });
-
-        // Modal ablak bezárása
         $("#updateCityModal").modal("hide");
     });
-
-
     $(document).on("click", ".deleteBtn", function() {
         var cityId = $(this).data("city-id");
         var cityName = $(this).data("city-name");
-
-        // Megerősítő ablakhoz tartozó modal megjelenítése
         $("#cityNameToDelete").text(cityName);
         $("#deleteCityModal").modal("show");
-
-        // Az üzenet visszaigazolásának gombra kattintás eseménykezelő
         $("#confirmDeleteBtn").click(function () {
-            // AJAX hívás
             $.ajax({
                 url: "../admin/ajax/delete_city.php",
                 method: "POST",
@@ -136,24 +124,17 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function (response) {
                     if (response.success) {
-                        // Sikeres válasz esetén végrehajtandó tevékenységek
                         alert(response.message);
                         window.location.reload();
                     } else {
-                        // Sikertelen válasz esetén végrehajtandó tevékenységek
                         alert(response.error);
                     }
                 },
                 error: function (xhr, status, error) {
-                    // Hiba esetén végrehajtandó tevékenységek
                     console.log("AJAX Error:", error);
                 }
             });
-
-            // Modal ablak bezárása
             $("#deleteCityModal").modal("hide");
         });
     });
-
-
 });

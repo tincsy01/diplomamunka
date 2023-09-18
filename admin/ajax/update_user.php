@@ -4,7 +4,6 @@ require_once '../php/db_config.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 //var_dump($_POST); die();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Ellenőrizd, hogy az adatok megfelelően érkeztek-e
     if (isset($_POST["userId"]) && isset($_POST["updatedName"]) && isset($_POST["updatedEmail"]) && isset($_POST["updatedPermission"])) {
         try {
             $userId = $_POST["userId"];
@@ -13,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $updatedPermission = $_POST["updatedPermission"];
             $updatedActive = $_POST["updatedActive"];
 
-            // SQL lekérdezés a felhasználó frissítéséhez
             $sql = "UPDATE users SET name = :updated_name, email = :updated_email, permission = :updated_permission, active = :updatedActive WHERE user_id = :user_id";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':updated_name', $updatedName, PDO::PARAM_STR);
@@ -26,17 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $response = array("success" => true, "message" => "User updated successfully.");
             echo json_encode($response);
         } catch (PDOException $e) {
-            // Hiba esetén válasz küldése
             $response = array("success" => false, "error" => "Error updating user: " . $e->getMessage());
             echo json_encode($response);
         }
     } else {
-        // Hiányzó adatok esetén válasz küldése
         $response = array("success" => false, "error" => "Missing data.");
         echo json_encode($response);
     }
 } else {
-    // Nem megfelelő kérés metódus esetén válasz küldése
     $response = array("success" => false, "error" => "Invalid request method.");
     echo json_encode($response);
 }

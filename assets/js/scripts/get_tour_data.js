@@ -12,20 +12,15 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.success) {
                     var attractions = response.attractions;
-
-                    // Checkbox lista létrehozása
                     var checklistHtml = '<div id="checklist">';
                     attractions.forEach(function(attraction, index) {
                         var checkboxId = 'attraction_' + attraction.attraction_id;
                         checklistHtml += '<input checked="" value="' + attraction.attraction_id + '" name="r" type="checkbox" id="' + checkboxId + '">';
                         checklistHtml += '<label for="' + checkboxId + '">' + attraction.name + '</label>';
-                        // Írd meg itt, hogy el is vegye a checkbart a listából
                     });
                     checklistHtml += '</div>';
 
                     $('.tourAttractions').html(checklistHtml);
-
-                    // Térkép inicializálása
                     initMap(attractions);
                 } else {
                     console.error('Failed to load tour attractions.');
@@ -36,19 +31,13 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Hívjuk meg a függvényt
     getTourAttractions();
-
-    // Térkép inicializálása
     function initMap(attractions) {
         var center = { lat: 47.4977975, lng: 19.0403225 };
         var map = new google.maps.Map(document.getElementById('tourMap'), {
             center: center,
             zoom: 8
         });
-
-        // Markerek hozzáadása a térképhez
         attractions.forEach(function(attraction, index) {
             var marker = new google.maps.Marker({
                 position: { lat: parseFloat(attraction.lattitude), lng: parseFloat(attraction.longitude) },

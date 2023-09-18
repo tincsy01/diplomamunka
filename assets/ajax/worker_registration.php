@@ -20,7 +20,6 @@ if (!existsUser($username, $email)) {
 
     $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
     $active = 1;
-//    $code = createCode(40);
     $datetime = new DateTime('tomorrow');
     $reg_expire = $datetime->format('Y-m-d H:i:s');
 

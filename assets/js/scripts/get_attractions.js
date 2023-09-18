@@ -36,19 +36,15 @@ $(document).on("click", ".updateBtn", function() {
     // var address = $(this).attr('address-data');
     var description = $(this).attr('desc-data');
     $('input[name="attraction"]').val(attractionName);
-
-    // Hívjuk a getCategories függvényt, hogy a kategóriák betöltődjenek
     getCategories(function(data) {
         var categorySelect = $('select[name="category"]');
         var originalCategory = $('<option></option>')
             .val(category)
             .text(category);
 
-        // Töröljük a korábbi opciókat és hozzáadjuk az eredeti kategóriát
         categorySelect.empty();
         categorySelect.append(originalCategory);
 
-        // Hozzáadjuk az összes kategóriát az eredeti kategória után
         data.forEach(function(categories) {
             if (categories.category !== category) {
                 var option = $('<option></option>')
@@ -58,7 +54,6 @@ $(document).on("click", ".updateBtn", function() {
             }
         });
 
-        // Az alábbi rész az eredeti kódból származik
         $('input[name="longitude"]').val(longitude);
         $('input[name="lattitude"]').val(lattitude);
         // $('input[name="address"]').val(address);
@@ -107,12 +102,10 @@ $(document).on("click", ".updateBtn", function() {
 $(document).on("click", ".deleteBtn", function() {
     var attractionId = $(this).attr('id-data');
 
-    // Megjelenítjük a kérdéses ablakot
     $('.questionWindow').css({
         display: "block"
     });
 
-    // Delete gombra kattintva elküldjük az attraction_id-t
     $('.deleteConf').click(function() {
         $.post("../assets/ajax/delete_attraction.php", {
             attraction_id: attractionId
@@ -134,7 +127,6 @@ $(document).on("click", ".deleteBtn", function() {
         });
     });
 });
-/*Functions*/
 function getCategories(callback) {
     $.ajax({
         url: '../assets/ajax/get_categories.php',

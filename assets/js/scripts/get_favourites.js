@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Az AJAX kérés elküldése és a kedvencek listázása
     function getFavorites() {
         $.ajax({
             url: '../assets/ajax/get_favourites.php',
@@ -8,10 +7,7 @@ $(document).ready(function() {
             success: function(response) {
                 var favoritesList = $('#favoritesList');
 
-                // Először törölje az összes elemet a kedvencek listából
                 favoritesList.empty();
-
-                // Töltse fel a kedvencek listáját
                 if (response.success && response.favorites.length > 0) {
                     response.favorites.forEach(function(favorite) {
                         var cardAttractionDiv = $('<div class="cardAttraction"></div>');

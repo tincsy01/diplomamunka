@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var numberField = document.getElementById("number-field");
-    var descriptionField = document.getElementById("description"); // Hozzáadott mező
+    var descriptionField = document.getElementById("description");
     var plusBtn = document.getElementById("plus-btn");
     var minusBtn = document.getElementById("minus-btn");
     var submitBtn = document.getElementById("submit-btn");
@@ -18,12 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     submitBtn.addEventListener("click", function (e) {
-        e.preventDefault(); // Megakadályozza az űrlap alapértelmezett viselkedését (oldalfrissítés)
-
+        e.preventDefault();
         var currentValue = parseInt(numberField.value);
-        var descriptionValue = descriptionField.value; // TextArea érték
+        var descriptionValue = descriptionField.value;
 
-        // AJAX kérés fetch API-val
         fetch("../assets/ajax/add_visitors.php", {
             method: "POST",
             headers: {

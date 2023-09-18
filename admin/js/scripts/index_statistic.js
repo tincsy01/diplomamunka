@@ -81,9 +81,8 @@ $(document).ready(function () {
                     }]
                 };
 
-                // Frissítjük a diagramot
                 if (chart) {
-                    chart.destroy(); // Megszüntetjük a korábbi diagramot, ha van
+                    chart.destroy();
                 }
                 chart = new Chart(ctx, {
                     type: 'bar',
@@ -108,5 +107,4 @@ $(document).ready(function () {
     });
     fetchChartData('days');
     fetchCityChartData2();
-
 });

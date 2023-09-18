@@ -55,7 +55,6 @@
                         <div class="user-logged-in">
                             <button id="favorite-button" class="btn ">Add to Favorites</button>
                         </div>
-<!--                        <button id="favorite-button" class="btn ">Add to Favorites</button>-->
                     </div>
                     <div id="tourMap" style="height: 300px"></div>
                 </div>
@@ -70,7 +69,6 @@
                         <div id="comment-section"></div>
                     </div>
                     <div id="comments" class="comments-list"></div>
-
                 </div>
             </div>
         </div>
@@ -88,6 +86,5 @@
 <script src="../assets/js/hoverIntent.js"></script>
 <script src="../assets/js/superfish.js"></script>
 <script src="../assets/js/main.js"></script>
-
 </body>
 </html>

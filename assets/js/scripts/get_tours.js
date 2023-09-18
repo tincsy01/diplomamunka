@@ -1,7 +1,6 @@
 function redirectToTourPage(tourId) {
     window.location.href = 'tour_data.php?tour_id=' + tourId;
 }
-
 function getTours() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '../assets/ajax/get_tours.php');

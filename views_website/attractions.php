@@ -46,8 +46,6 @@
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
                 <div class="desc animate-box">
                     <h2>Edit your attractions!</h2>
-<!--                    <span>Lovely Crafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FREEHTML5.co</a></span>-->
-<!--                    <span><a class="btn btn-primary btn-lg" href="#">Get Started</a></span>-->
                 </div>
             </div>
         </div>
@@ -96,10 +94,6 @@
                         <input placeholder="‎" type="text" id="lattitude" name="lattitude">
                         <label for="lattitude">Latitude</label>
                     </div>
-<!--                    <div class="group">-->
-<!--                        <input placeholder="‎" type="text" id="address" name="address">-->
-<!--                        <label for="address">Address</label>-->
-<!--                    </div>-->
                     <div class="group">
                         <textarea name="description" id="description" cols="25" rows="3" placeholder="‎"></textarea>
                         <label for="description">Description</label>

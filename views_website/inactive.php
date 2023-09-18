@@ -73,44 +73,6 @@
                 </div>
             </div>
         </div>
-
-
-        <!--        <div class="fh5co-section">-->
-        <!--            <div class="container">-->
-        <!--                <div class="row">-->
-        <!--                    <div class="col-md-6 fh5co-news">-->
-        <!--                        <h3>News</h3>-->
-        <!--                        <ul>-->
-        <!--                            <li>-->
-        <!--                                <a href="#">-->
-        <!--                                    <span class="fh5co-date">Sep. 10, 2016</span>-->
-        <!--                                    <h3>Newly done Bridge of London</h3>-->
-        <!--                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>-->
-        <!--                                </a>-->
-        <!--                            </li>-->
-        <!--                            <li>-->
-        <!--                                <a href="#">-->
-        <!--                                    <span class="fh5co-date">Sep. 10, 2016</span>-->
-        <!--                                    <h3>Newly done Bridge of London</h3>-->
-        <!--                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>-->
-        <!--                                </a>-->
-        <!--                            </li>-->
-        <!--                            <li>-->
-        <!--                                <a href="#">-->
-        <!--                                    <span class="fh5co-date">Sep. 10, 2016</span>-->
-        <!--                                    <h3>Newly done Bridge of London</h3>-->
-        <!--                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit!</p>-->
-        <!--                                </a>-->
-        <!--                            </li>-->
-        <!--                        </ul>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-md-6 fh5co-testimonial">-->
-        <!--                        <img src="../assets/images/cover_bg_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive mb20">-->
-        <!--                        <img src="../assets/images/cover_bg_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
         <?php
         require_once '../assets/php/includes/footer.php';
         ?>

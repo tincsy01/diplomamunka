@@ -7,7 +7,7 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$ret = []; // Új tömb a válasznak
+$ret = [];
 
 foreach ($result as $row) {
     $ret[] = [

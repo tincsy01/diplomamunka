@@ -19,9 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $datetime = new DateTime('tomorrow');
         $reg_expire= $datetime->format('Y-m-d H:i:s');
 
-
-            // Kapcsolódás az adatbázishoz
-            $pdo = connectDatabase($dsn, $pdoOptions);
+        $pdo = connectDatabase($dsn, $pdoOptions);
 
         $sql = "INSERT INTO organizations(org_name, city_id, username, email, password, phone, address, description, code, reg_expire, active) VALUES 
                             (:org_name, :city_id, :username, :email, :password, :phone, :address , :description, :code, :reg_expire, :active)";
@@ -46,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query->bindParam(':code', $code, PDO::PARAM_STR);
 
         $query->execute();
-            // Lekérdezés végrehajtása
             if ($query->execute()) {
                 $response = array('success' => true, 'message' => 'Organization added successfully.');
             } else {

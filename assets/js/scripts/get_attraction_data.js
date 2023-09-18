@@ -1,8 +1,6 @@
 $(document).ready(function() {
     var map;
     $('.user-logged-in').hide();
-
-    // Ellenőrizzük a bejelentkezési állapotot az oldal betöltésekor
     checkLoginStatus();
 
     function getAttractionData() {
@@ -15,7 +13,6 @@ $(document).ready(function() {
             dataType: 'json',
             data: { attraction_id: attractionId },
             success: function(response) {
-                // Adatok megjelenítése a div-ben
                 var attractionDataDiv = $('.attractionData');
                 var dataHtml = '<h2>' + response.name + '</h2>' +
                     '<p>Attraction ID: ' + response.attraction_id + '</p>' +
@@ -35,7 +32,6 @@ $(document).ready(function() {
         });
     }
     getAttractionData();
-
     function checkLoginStatus() {
         $.ajax({
             url: '../assets/ajax/get_login.php',
@@ -60,8 +56,6 @@ $(document).ready(function() {
             center: center,
             zoom: 8
         });
-
-        // Markerek hozzáadása a térképhez
         attractions.forEach(function (attraction, index) {
             var marker = new google.maps.Marker({
                 position: {lat: parseFloat(attraction.lattitude), lng: parseFloat(attraction.longitude)},

@@ -1194,18 +1194,30 @@ tbody {
   border-bottom: #333333 solid 2px;
 }
 /*Update Window*/
-#updateWindow{
+#updateWindow {
   display: none;
-  /*position: absolute;*/
-  height: auto;
-  width: 400px;
-  left: calc((100% - 400px)/2);
-  background-color: white;
-  top: 15%;
   position: fixed;
+  top: 50%;
+  left: 10%; /* Helyezd el a bal szélen */
+  background-color: white;
+  width: 80%; /* Szélesség beállítása, hogy a tartalom a bal szélen maradjon */
   padding: 20px;
   z-index: 3;
+  max-height: 70%;
+  overflow-y: auto;
 }
+/*#updateWindow{*/
+/*  display: none;*/
+/*  position: fixed;*/
+/*  top: 15%;*/
+/*  left: 50%;*/
+/*  background-color: white;*/
+/*  width: 400px;*/
+/*  padding: 20px;*/
+/*  z-index: 3;*/
+/*  max-height: 70%;*/
+/*  overflow-y: auto;*/
+/*}*/
 .backdrop {
   position: fixed;
   width: 100%;
@@ -1222,21 +1234,24 @@ tbody {
   font-size: 20px;
   cursor: pointer;
 }
-@media screen and (max-width:768px) {
-  #update_window  {
-    width: 100%;
-    left: 0;
-  }
-}
-.cardUpdate{
+.cardUpdate {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
-  width: 350px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  /*margin-top: 150px;*/
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  #updateWindow {
+    width: 100%;
+    max-height: 50%;
+    left: 0;
+  }
+  .cardUpdate {
+    max-height: 80%;
+    overflow-y: auto;
+  }
 }
 .questionWindow{
   display: none;

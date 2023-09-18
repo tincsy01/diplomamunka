@@ -11,8 +11,6 @@ function getCities() {
                     .text(city.city_name);
                 citySelect.append(option);
             });
-
-            // Az eseménykezelő hozzáadása csak itt történik meg, miután betöltöttük a városokat a select-be.
             citySelect.on('change', function() {
                 var cityId = $(this).val();
                 loadAttractions(cityId);
@@ -27,13 +25,10 @@ function loadAttractions(cityId) {
     var xhr = new XMLHttpRequest();
     var attractionSelect = $('#attractions select');
 
-    // Először ürítsd ki a Select2 mezőt
     attractionSelect.empty();
 
     if (!cityId) {
-        // Üres értéket adj hozzá a Select2-hez, hogy megjelenjen, amikor nincs város kiválasztva
         attractionSelect.prepend('<option value="" disabled selected hidden>Select attractions</option>');
-        // Most inicializáljuk a Select2-t
         attractionSelect.select2();
         return;
     }
@@ -42,16 +37,12 @@ function loadAttractions(cityId) {
     xhr.onload = function() {
         if (xhr.status === 200) {
             var attractions = JSON.parse(xhr.response);
-
-            // Az AJAX válaszban kapott látványosságokat hozzáadod a Select2-höz
             attractions.forEach(function(attraction) {
                 var option = $('<option></option>')
                     .val(attraction.attraction_id)
                     .text(attraction.name);
                 attractionSelect.append(option);
             });
-
-            // Most inicializáljuk a Select2-t
             attractionSelect.select2();
         } else {
             console.error('Hiba történt: ' + xhr.statusText);
@@ -90,7 +81,7 @@ function saveTour() {
             }
         },
         error: function (xhr, status, error) {
-            console.log(xhr.responseText); // Hiba részletek logolása
+            console.log(xhr.responseText);
             alert('Hiba történt a kommunikáció során: ' + error);
         }
     });
