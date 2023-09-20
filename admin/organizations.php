@@ -136,10 +136,6 @@
                                             <label for="phone">Phone</label>
                                             <input type="text" class="form-control" id="phone" name="phone" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="description">Description</label>
-                                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea></div>
-                                        <!-- További mezők a város hozzáadásához -->
                                     </form>
                                 </div>
                                 <div class="modal-footer">

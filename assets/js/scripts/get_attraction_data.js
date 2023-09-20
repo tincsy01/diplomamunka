@@ -14,12 +14,19 @@ $(document).ready(function() {
             data: { attraction_id: attractionId },
             success: function(response) {
                 var attractionDataDiv = $('.attractionData');
-                var dataHtml = '<h2>' + response.name + '</h2>' +
+                var dataHtml = '<div class="row">' +
+                    '<div class="col-lg-10 col-sm-10 col-xs-10">' +
+                    '<h2>' + response.name + '</h2>' +
                     '<p>Attraction ID: ' + response.attraction_id + '</p>' +
                     '<p>Popular: ' + response.popular + '</p>' +
                     '<img src="../assets/images/attractions/' + response.image + '" alt="' + response.name + '" class="col-lg-4 col-sm-4 col-xs-8">' +
                     '<p>Description: ' + response.description + '</p>' +
-                    '<p>Address: ' + response.address + '</p>';
+                    '<p>Address: ' + response.address + '</p>' +
+                    '</div>' +
+                    '<div class="col-lg-8 col-sm-8 col-xs-8">' +
+                    '<div id="tourMap" style="height: 400px;"></div>' +
+                    '</div>' +
+                    '</div>';
                 attractionDataDiv.prepend(dataHtml);
 
                 checkFavouriteStatus(attractionId);

@@ -58,7 +58,7 @@
 
                 <div class="row">
 
-                    <div class="col-lg-6 col-sm-8 col-xs-8">
+                    <div class="col-lg-5 col-sm-5 col-xs-10">
 
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">
@@ -68,8 +68,8 @@
                             <div class="card-body">
                                 <!-- Select mező a kiválasztáshoz -->
                                 <select id="chartType" class="form-control">
-                                    <option value="months">Months</option>
                                     <option value="days">Days</option>
+                                    <option value="months">Months</option>
                                 </select>
                                 <!-- A diagram tartalmi része -->
                                 <canvas id="myChart"></canvas>
@@ -78,12 +78,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-sm-8 col-xs-8">
+                    <div class="col-lg-5 col-sm-5 col-xs-10">
 
                         <!-- Circle Buttons -->
                         <div class="card shadow mb-6">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Statistic of 5 most visited city</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Statistic of 5 most visited attractions</h6>
                             </div>
                             <div class="card-body">
                                 <canvas id="cityChart2"></canvas>

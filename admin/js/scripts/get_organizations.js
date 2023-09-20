@@ -57,8 +57,7 @@ $(document).ready(function() {
         var password = $("#password").val();
         var address = $("#address").val();
         var phone = $("#phone").val();
-        var description = $("#description").val();
-        if (!orgName || !email || !city || !username || !password || !address || !phone || !description) {
+        if (!orgName || !email || !city || !username || !password || !address || !phone) {
             alert("All fields must be filled in!");
             return;
         }
@@ -70,7 +69,6 @@ $(document).ready(function() {
         formData.append("password", password);
         formData.append("address", address);
         formData.append("phone", phone);
-        formData.append("description", description);
 
         $.ajax({
             url: "../admin/ajax/insert_new_org.php",

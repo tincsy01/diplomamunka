@@ -56,7 +56,7 @@
                             <button id="favorite-button" class="btn ">Add to Favorites</button>
                         </div>
                     </div>
-                    <div id="tourMap" style="height: 300px"></div>
+<!--                    <div id="tourMap" style="height: 300px"></div>-->
                 </div>
             </div>
             <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">

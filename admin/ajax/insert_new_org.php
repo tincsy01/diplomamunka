@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST['password']; // Ez itt még nem biztonságos, jelszó hashelés szükséges
         $address = $_POST['address'];
         $phone = $_POST['phone'];
-        $description = $_POST['description'];
         $permission = 3;
         $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
         $active = 0;
@@ -21,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $pdo = connectDatabase($dsn, $pdoOptions);
 
-        $sql = "INSERT INTO organizations(org_name, city_id, username, email, password, phone, address, description, code, reg_expire, active) VALUES 
-                            (:org_name, :city_id, :username, :email, :password, :phone, :address , :description, :code, :reg_expire, :active)";
+        $sql = "INSERT INTO organizations(org_name, city_id, username, email, password, phone, address, code, reg_expire, active) VALUES 
+                            (:org_name, :city_id, :username, :email, :password, :phone, :address, :code, :reg_expire, :active)";
 
         $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
         $active = 0;
@@ -37,14 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query->bindParam(':password', $passwordHashed, PDO::PARAM_STR);
         $query->bindParam(':address', $address, PDO::PARAM_STR);
         $query->bindParam(':phone', $phone, PDO::PARAM_STR);
-        $query->bindParam(':description', $description, PDO::PARAM_STR);
         $query->bindParam(':phone', $phone, PDO::PARAM_STR);
         $query->bindParam(':reg_expire', $reg_expire, PDO::PARAM_STR);
         $query->bindParam(':active', $active, PDO::PARAM_STR);
         $query->bindParam(':code', $code, PDO::PARAM_STR);
 
         $query->execute();
-            if ($query->execute()) {
+
+        $sql2 = "UPDATE cities SET organization_name = :org_name WHERE city_id = :city_id";
+        $query = $pdo->prepare($sql2);
+        $query->bindParam(':org_name', $orgName, PDO::PARAM_STR);
+        $query->bindParam(':city_id', $city, PDO::PARAM_INT);
+        $query->execute();
+
+        if ($query->execute()) {
                 $response = array('success' => true, 'message' => 'Organization added successfully.');
             } else {
                 $response = array('success' => false, 'error' => 'Error adding organization.');
