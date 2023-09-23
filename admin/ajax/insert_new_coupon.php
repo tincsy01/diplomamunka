@@ -9,7 +9,7 @@ use Twilio\Rest\Client;
 $pdo = connectDatabase($dsn, $pdoOptions);
 
 $sid = "AC4f51b3b7d2be6dbf1c4d0e898b4ae06e";
-$token = "1fc62a47bb51a8c1c869cb18f9a8c30b";
+$token = "5ada532cd47159a106676de7babff0ea";
 try {
     $client = new Client($sid, $token);
 } catch (ConfigurationException $e) {

@@ -59,7 +59,7 @@
 <!--                    <div id="tourMap" style="height: 300px"></div>-->
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-2.jpg);">
             </div>
         </div>
         <div class="fh5co-listing">

@@ -43,7 +43,7 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-3.jpg);">
                 <div class="desc animate-box">
                     <h2>Edit your attractions!</h2>
                 </div>
@@ -53,7 +53,7 @@
             <div class="container">
                 <div class="row" id="AttractionList">
                     <div class="table-container">
-                        <h1>Attractions</h1>
+                        <h1 style="color: white">Attractions</h1>
                         <table id="attractionsTable">
                             <thead>
                             <tr>

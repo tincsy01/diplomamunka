@@ -53,7 +53,7 @@
                     <div id="tourMap" style="height: 400px; width: 100%;" class="map col-lg-7 col-sm-7 col-xs-7"></div>
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-11.jpg);">
             </div>
         </div>
     </div>

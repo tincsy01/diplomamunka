@@ -44,7 +44,7 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-9.jpg);">
                 <div class="desc animate-box">
                     <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
                         <div class="wheel"></div>

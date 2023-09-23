@@ -77,7 +77,7 @@
                     </form>
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-12.jpg);">
             </div>
 
         </div>

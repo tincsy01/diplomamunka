@@ -1,9 +1,6 @@
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,9 +41,14 @@
         </div>
         <div class="fh5co-hero">
             <div class="fh5co-overlay">
-
                 <div class="card">
                     <span class="title">Coupon check</span>
+                    <div class="alert alert-danger" id="error-alert" style="display: none;">
+                        The coupon has expired or is incorrect.
+                    </div>
+                    <div class="alert alert-success" id="success-alert" style="display: none;">
+                        Coupon code successfully checked.
+                    </div>
                     <form class="form" id="login-form">
                         <div class="group">
                             <input placeholder="‎" type="text" id="code" name="code">
@@ -56,16 +58,16 @@
                     </form>
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background-coupons.jpg);">
-
-            </div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/background-coupons.jpg);"></div>
         </div>
         <?php
         require_once '../assets/php/includes/footer.php';
         ?>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.easing.1.3.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>

@@ -1,9 +1,12 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     var numberField = document.getElementById("number-field");
     var descriptionField = document.getElementById("description");
     var plusBtn = document.getElementById("plus-btn");
     var minusBtn = document.getElementById("minus-btn");
     var submitBtn = document.getElementById("submit-btn");
+    var errorAlert = document.getElementById("error-alert");
+    var successAlert = document.getElementById("success-alert");
 
     plusBtn.addEventListener("click", function () {
         var currentValue = parseInt(numberField.value);
@@ -36,19 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    throw new Error("Hiba történt a kérés során.");
+                    throw new Error("Error");
                 }
             })
             .then(function (data) {
                 if (data.success) {
-                    alert("Látogatók száma sikeresen frissítve.");
+                    successAlert.style.display = "block";
+                    errorAlert.style.display = "none";
                     window.location.reload();
                 } else {
-                    alert("Hiba történt a látogatók számának frissítése közben.");
+                    errorAlert.style.display = "block";
+                    successAlert.style.display = "none";
                 }
             })
             .catch(function (error) {
-                alert("Hiba történt: " + error.message);
+                errorAlert.style.display = "block";
+                successAlert.style.display = "none";
+                errorAlert.textContent = "Hiba történt: " + error.message;
             });
     });
 });

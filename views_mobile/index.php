@@ -33,6 +33,7 @@
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
     <script src="../assets/js/scripts/add_visitors.js"></script>
+    <script src="../assets/js/scripts/connection_checker.js"></script>
 </head>
 <body>
 <div id="fh5co-wrapper">
@@ -47,6 +48,12 @@
 
                 <div class="card">
                     <span class="title">Add visitors</span>
+                    <div class="alert alert-danger" id="error-alert" style="display: none;">
+                        Could not add visitors.
+                    </div>
+                    <div class="alert alert-success" id="success-alert" style="display: none;">
+                        Number of visitors successfully updated.
+                    </div>
                     <form class="form" id="login-form">
                         <div class="group">
                             <div class="input-group">

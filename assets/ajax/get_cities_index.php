@@ -1,20 +1,26 @@
 <?php
 require_once '../../config/config.php';
 require_once '../../config/db_config.php';
-//require_once '../php/includes/functions.php';
 $pdo = connectDatabase($dsn, $pdoOptions);
 
-try {
-    $sql = "SELECT image, city_name, city_id FROM cities";
-    $stmt = $pdo->query($sql);
-    $cities = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    if (count($cities) > 0) {
-        header('Content-Type: application/json');
-        echo json_encode($cities);
-    } else {
-        echo json_encode([]);
-    }
-} catch (PDOException $e) {
-    echo "Hiba történt a városok lekérdezése során: " . $e->getMessage();
+$sql = "SELECT c.city_id, c.city_name, c.image FROM cities c INNER JOIN organizations o ON c.city_id = o.city_id WHERE o.status = 1 ";
+$query = $pdo->prepare($sql);
+$query->execute();
+$result = $query->fetchAll();
+$ret = [];
+foreach ($result as $row) {
+    $ret[] = [
+        "city_id" => $row['city_id'],
+        "city_name" => $row['city_name'],
+        "image" => $row['image']
+    ];
 }
+// Töröljük az adatpuffer tartalmát
+ob_clean();
+
+// Indítsuk újra az adatpuffert
+ob_start();
+
+// Állítsuk be a HTTP Content-Type fejlécét JSON formátumra
+header('Content-Type: application/json');
+echo json_encode($ret);

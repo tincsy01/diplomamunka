@@ -9,7 +9,7 @@ $sql = "SELECT c.city_name, t.tour_id, ta.attraction_id, a.name, c.city_id, t.da
         FROM tours t 
         INNER JOIN tour_attraction ta ON t.tour_id = ta.tour_id 
         INNER JOIN attractions a ON a.attraction_id = ta.attraction_id 
-        INNER JOIN cities c ON c.city_id = a.city_id WHERE t.user_id = :user_id";
+        INNER JOIN cities c ON c.city_id = a.city_id WHERE t.user_id = :user_id ORDER BY t.date ASC";
 
 $query = $pdo->prepare($sql);
 $query->bindParam(':user_id', $user_id, PDO::PARAM_INT);

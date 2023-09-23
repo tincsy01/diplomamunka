@@ -50,6 +50,7 @@
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
                                 <?php
+                                session_start();
                                 if(isset($_SESSION['permission'])){
                                     switch ($_SESSION['permission']){
                                         case 2:
@@ -161,7 +162,7 @@
                 </div>
             </div>
 
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-10.jpg);">
 
             </div>
         </div>

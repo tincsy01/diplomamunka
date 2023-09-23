@@ -3,7 +3,7 @@ require_once '../php/config.php';
 require_once '../php/db_config.php';
 require_once '../php/functions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['orgName']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['address']) && isset($_POST['phone']) && isset($_POST['description'])) {
+    if (isset($_POST['orgName']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['address']) && isset($_POST['phone'])) {
         $orgName = $_POST['orgName'];
         $email = $_POST['email'];
         $city = $_POST['city'];

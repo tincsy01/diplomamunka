@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Make Attraction</title>
+    <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -27,13 +27,13 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/superfish.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/hamster.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../assets/js/modernizr-2.6.2.min.js"></script>
     <script src="../assets/js/respond.min.js"></script>
-    <script src="../assets/js/scripts/make_attraction.js"></script>
     <script src="../assets/js/scripts/connection_checker.js"></script>
-</head>
 <body>
 <div id="fh5co-wrapper">
     <div id="fh5co-page">
@@ -43,47 +43,34 @@
             ?>
         </div>
         <div class="fh5co-hero">
-            <div class="fh5co-overlay">
-
-                <div class="card">
-                    <span class="title">Make your city attraction</span>
-                    <form class="form" id="login-form" enctype="multipart/form-data">
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="attraction" name="attraction">
-                            <label for="attraction">Attraction name</label>
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/backgroung.jpg);">
+                <div class="desc animate-box">
+                    <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+                        <div class="wheel"></div>
+                        <div class="hamster">
+                            <div class="hamster__body">
+                                <div class="hamster__head">
+                                    <div class="hamster__ear"></div>
+                                    <div class="hamster__eye"></div>
+                                    <div class="hamster__nose"></div>
+                                </div>
+                                <div class="hamster__limb hamster__limb--fr"></div>
+                                <div class="hamster__limb hamster__limb--fl"></div>
+                                <div class="hamster__limb hamster__limb--br"></div>
+                                <div class="hamster__limb hamster__limb--bl"></div>
+                                <div class="hamster__tail"></div>
+                            </div>
                         </div>
-                        <div class="group">
-                            <select name="category" id="category" >
-                                <option value="" disabled selected hidden >-- Select a category --</option>
-                            </select>
-                            <label for="category">Category</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="longitude" name="longitude">
-                            <label for="longitude">Longitude</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="lattitude" name="lattitude">
-                            <label for="lattitude">Latitude</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="text" id="address" name="address">
-                            <label for="address">Address</label>
-                        </div>
-                        <div class="group">
-                            <textarea name="description" id="description" cols="25" rows="3" placeholder="‎"></textarea>
-                            <label for="description">Description</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="file" id="photo" name="photo">
-                            <label for="photo">Photo</label>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
+                        <div class="spoke"></div>
+                    </div>
                 </div>
             </div>
-            <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../assets/images/bg-8.jpg);">
-
+        </div>
+        <div class="fh5co-listing">
+            <div class="container">
+                <div class="row cities">
+                </div>
             </div>
         </div>
         <?php
